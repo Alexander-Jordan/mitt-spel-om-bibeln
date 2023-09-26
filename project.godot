@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Mitt spel om Bibeln"
 run/main_scene="res://scenes/levels/main_menu.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 
 [display]
 
@@ -23,3 +23,7 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="Mitt spel om Bibeln"
+
+[filesystem]
+
+import/fbx/enabled=false

@@ -1,11 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=8 format=3 uid="uid://d2betxms5lxy8"]
 
+[ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_yrglv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uwd0k"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr1cl"]
+sky_top_color = Color(0.643137, 0.65098, 0.768627, 1)
+sky_horizon_color = Color(0.710784, 0.704995, 0.725407, 1)
+sky_energy_multiplier = 1.5
+ground_horizon_color = Color(0.710784, 0.704995, 0.725407, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_h1v6o"]
+[sub_resource type="Sky" id="Sky_bjyto"]
+sky_material = SubResource("ProceduralSkyMaterial_qr1cl")
+
+[sub_resource type="Environment" id="Environment_2fe4c"]
+background_mode = 2
+sky = SubResource("Sky_bjyto")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.7
+fog_sun_scatter = 1.0
+fog_sky_affect = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2
+volumetric_fog_sky_affect = 0.2
 
 [sub_resource type="Theme" id="Theme_cw3cf"]
 default_font = ExtResource("1_hdq7i")
@@ -14,13 +33,16 @@ default_font = ExtResource("1_hdq7i")
 
 [node name="Background" type="Node3D" parent="."]
 
-[node name="Ground" type="StaticBody3D" parent="Background"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
+environment = SubResource("Environment_2fe4c")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Ground"]
-shape = SubResource("BoxShape3D_uwd0k")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background"]
+transform = Transform3D(-0.083678, 0.519182, -0.850557, 0, 0.853551, 0.52101, 0.996493, 0.0435971, -0.0714234, 0, 0, 0)
+light_color = Color(1, 0.705882, 0.521569, 1)
+light_energy = 4.0
+shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/Ground"]
-mesh = SubResource("BoxMesh_h1v6o")
+[node name="sovrum" parent="Background" instance=ExtResource("1_h6pfy")]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
 anchors_preset = 15
@@ -35,7 +57,7 @@ size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0423263, 2.82577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52423, 0.838325, 3.84943)
 
 [node name="MenuUI" type="Control" parent="."]
 layout_mode = 3
@@ -89,3 +111,5 @@ text = "Avsluta"
 
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
+
+[editable path="Background/sovrum"]
