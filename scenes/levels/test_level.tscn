@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://chrem6k6tvykr"]
+
+[ext_resource type="Texture2D" uid="uid://cnlh0pshqvw0a" path="res://assets/textures/test_level/templategrid_albedo.png" id="1_33xv5"]
+[ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="2_tx0s1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lnxq7"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ydctb"]
+sky_material = SubResource("ProceduralSkyMaterial_lnxq7")
+
+[sub_resource type="Environment" id="Environment_011io"]
+background_mode = 2
+sky = SubResource("Sky_ydctb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbd5e"]
+albedo_texture = ExtResource("1_33xv5")
+uv1_triplanar = true
+
+[node name="test_level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_011io")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_bbd5e")
+
+[node name="cube1x1x1" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5)
+use_collision = true
+material = SubResource("StandardMaterial3D_bbd5e")
+
+[node name="cube1x2x1" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 5)
+use_collision = true
+size = Vector3(1, 2, 1)
+material = SubResource("StandardMaterial3D_bbd5e")
+
+[node name="player" parent="." instance=ExtResource("2_tx0s1")]
