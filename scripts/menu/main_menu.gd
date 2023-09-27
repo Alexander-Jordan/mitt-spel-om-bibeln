@@ -26,4 +26,4 @@ func _on_level_select_back_button_pressed():
 
 
 func _on_level_select_load_level_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/test_level.tscn")
