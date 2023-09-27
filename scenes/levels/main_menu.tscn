@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=11 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_yrglv"]
+[ext_resource type="Script" path="res://scripts/menu/main_menu_camera_manager.gd" id="2_5fxog"]
+[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="3_8qya4"]
+[ext_resource type="Texture2D" uid="uid://3mxvjjlhp3du" path="res://assets/icons/cross.svg" id="4_11fsp"]
+[ext_resource type="Texture2D" uid="uid://cckgqmo8nmtkm" path="res://assets/icons/arrow.png" id="5_eifie"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr1cl"]
 sky_top_color = Color(0.643137, 0.65098, 0.768627, 1)
@@ -28,6 +31,7 @@ volumetric_fog_sky_affect = 0.2
 
 [sub_resource type="Theme" id="Theme_cw3cf"]
 default_font = ExtResource("1_hdq7i")
+default_font_size = 30
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -56,8 +60,17 @@ handle_input_locally = false
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52423, 0.838325, 3.84943)
+[node name="CameraManager" type="Node3D" parent="Background/SubViewportContainer/SubViewport"]
+script = ExtResource("2_5fxog")
+
+[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76458, 0.611002, 3.09443)
+
+[node name="MainCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76458, 0.611002, 3.09443)
+
+[node name="LevelsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+transform = Transform3D(-4.37114e-08, 0.731354, -0.681998, 0, 0.681998, 0.731354, 1, 3.19685e-08, -2.98111e-08, 0.703828, 1.08335, 1.28607)
 
 [node name="MenuUI" type="Control" parent="."]
 layout_mode = 3
@@ -67,7 +80,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cw3cf")
-script = ExtResource("2_yrglv")
+script = ExtResource("3_8qya4")
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuUI"]
 layout_mode = 1
@@ -90,26 +103,88 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 62
 text = "Mitt spel om Bibeln"
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
+[node name="Main" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="StartButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Main"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="StartButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Starta spel"
 
-[node name="SettingsButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 text = "Inställningar"
 
-[node name="QuitButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 text = "Avsluta"
 
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
+[node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MenuTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Välj bana"
+
+[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_11fsp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NextButton2" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+texture_normal = ExtResource("5_eifie")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("5_eifie")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LoadLevelButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "Ladda bana"
+
+[connection signal="menu_changed" from="MenuUI" to="Background/SubViewportContainer/SubViewport/CameraManager" method="_on_menu_ui_menu_changed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer/BackButton" to="MenuUI" method="_on_level_select_back_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI" method="_on_level_select_load_level_button_pressed"]
 
 [editable path="Background/sovrum"]
