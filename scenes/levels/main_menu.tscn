@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=12 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_4cpw2"]
 [ext_resource type="Script" path="res://scripts/menu/main_menu_camera_manager.gd" id="2_5fxog"]
 [ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="3_8qya4"]
 [ext_resource type="Texture2D" uid="uid://3mxvjjlhp3du" path="res://assets/icons/cross.svg" id="4_11fsp"]
@@ -47,6 +48,51 @@ light_energy = 4.0
 shadow_enabled = true
 
 [node name="sovrum" parent="Background" instance=ExtResource("1_h6pfy")]
+
+[node name="matta" parent="Background/sovrum" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="sängbord" parent="Background/sovrum" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="sängbord_låda" parent="Background/sovrum/sängbord" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="sängbord_låda_2" parent="Background/sovrum/sängbord" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_ram" parent="Background/sovrum" index="2"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_kudde" parent="Background/sovrum/säng_ram" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_madrass" parent="Background/sovrum/säng_ram" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_täcke" parent="Background/sovrum/säng_ram" index="2"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_ram" parent="Background/sovrum" index="3"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_h" parent="Background/sovrum/garderob_ram" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_mh" parent="Background/sovrum/garderob_ram" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_mh_001" parent="Background/sovrum/garderob_ram" index="2"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_v" parent="Background/sovrum/garderob_ram" index="3"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_låda" parent="Background/sovrum/garderob_ram" index="4"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_låda_2" parent="Background/sovrum/garderob_ram" index="5"]
+surface_material_override/0 = ExtResource("2_4cpw2")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
 anchors_preset = 15

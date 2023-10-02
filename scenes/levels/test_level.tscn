@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://chrem6k6tvykr"]
+[gd_scene load_steps=9 format=3 uid="uid://chrem6k6tvykr"]
 
 [ext_resource type="Texture2D" uid="uid://cnlh0pshqvw0a" path="res://assets/textures/test_level/templategrid_albedo.png" id="1_33xv5"]
+[ext_resource type="PackedScene" uid="uid://cxc6msqfnn4o0" path="res://assets/models/nature/trees/trees.blend" id="2_33gfi"]
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="2_tx0s1"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="3_ngdyf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lnxq7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,4 +50,278 @@ use_collision = true
 size = Vector3(1, 2, 1)
 material = SubResource("StandardMaterial3D_bbd5e")
 
+[node name="trees" parent="stage" instance=ExtResource("2_33gfi")]
+
+[node name="fruittree_small_1_trunk" parent="stage/trees" index="0"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_2" parent="stage/trees" index="1"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_1_003" parent="stage/trees" index="2"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_3" parent="stage/trees" index="3"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_trunk_001" parent="stage/trees" index="4"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_2_001" parent="stage/trees" index="5"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_1_001" parent="stage/trees" index="6"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_3_001" parent="stage/trees" index="7"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_trunk_002" parent="stage/trees" index="8"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_2_002" parent="stage/trees" index="9"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_1_002" parent="stage/trees" index="10"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_1_leefs_3_002" parent="stage/trees" index="11"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_trunk" parent="stage/trees" index="12"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_1" parent="stage/trees" index="13"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_2" parent="stage/trees" index="14"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_3" parent="stage/trees" index="15"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_4" parent="stage/trees" index="16"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_trunk_001" parent="stage/trees" index="17"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_1_001" parent="stage/trees" index="18"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_2_001" parent="stage/trees" index="19"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_3_001" parent="stage/trees" index="20"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_4_001" parent="stage/trees" index="21"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_trunk_002" parent="stage/trees" index="22"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_1_002" parent="stage/trees" index="23"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_2_002" parent="stage/trees" index="24"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_3_002" parent="stage/trees" index="25"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_2_leefs_4_002" parent="stage/trees" index="26"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_trunk" parent="stage/trees" index="27"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_1" parent="stage/trees" index="28"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_4" parent="stage/trees" index="29"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_3" parent="stage/trees" index="30"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_2" parent="stage/trees" index="31"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_trunk_001" parent="stage/trees" index="32"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_1_001" parent="stage/trees" index="33"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_4_001" parent="stage/trees" index="34"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_3_001" parent="stage/trees" index="35"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_2_001" parent="stage/trees" index="36"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_trunk_002" parent="stage/trees" index="37"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_1_002" parent="stage/trees" index="38"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_4_002" parent="stage/trees" index="39"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_3_002" parent="stage/trees" index="40"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_small_3_leefs_2_002" parent="stage/trees" index="41"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_trunk" parent="stage/trees" index="42"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_1" parent="stage/trees" index="43"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_2" parent="stage/trees" index="44"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_3" parent="stage/trees" index="45"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_4" parent="stage/trees" index="46"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_5" parent="stage/trees" index="47"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_trunk_001" parent="stage/trees" index="48"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_1_001" parent="stage/trees" index="49"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_2_001" parent="stage/trees" index="50"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_3_001" parent="stage/trees" index="51"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_4_001" parent="stage/trees" index="52"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_5_001" parent="stage/trees" index="53"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_trunk_002" parent="stage/trees" index="54"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_1_002" parent="stage/trees" index="55"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_2_002" parent="stage/trees" index="56"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_3_002" parent="stage/trees" index="57"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_4_002" parent="stage/trees" index="58"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_1_leefs_5_002" parent="stage/trees" index="59"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_trunk" parent="stage/trees" index="60"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_1" parent="stage/trees" index="61"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_2" parent="stage/trees" index="62"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_3" parent="stage/trees" index="63"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_4" parent="stage/trees" index="64"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_trunk_001" parent="stage/trees" index="65"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_1_001" parent="stage/trees" index="66"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_2_001" parent="stage/trees" index="67"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_3_001" parent="stage/trees" index="68"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_4_001" parent="stage/trees" index="69"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_trunk_002" parent="stage/trees" index="70"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_1_002" parent="stage/trees" index="71"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_2_002" parent="stage/trees" index="72"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_3_002" parent="stage/trees" index="73"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_2_leefs_4_002" parent="stage/trees" index="74"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_1" parent="stage/trees" index="75"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_2" parent="stage/trees" index="76"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_3" parent="stage/trees" index="77"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_4" parent="stage/trees" index="78"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_trunk" parent="stage/trees" index="79"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_1_001" parent="stage/trees" index="80"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_2_001" parent="stage/trees" index="81"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_3_001" parent="stage/trees" index="82"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_4_001" parent="stage/trees" index="83"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_trunk_001" parent="stage/trees" index="84"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_1_002" parent="stage/trees" index="85"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_2_002" parent="stage/trees" index="86"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_3_002" parent="stage/trees" index="87"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_leefs_4_002" parent="stage/trees" index="88"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
+[node name="fruittree_big_3_trunk_002" parent="stage/trees" index="89"]
+surface_material_override/0 = ExtResource("3_ngdyf")
+
 [node name="player" parent="." instance=ExtResource("2_tx0s1")]
+
+[editable path="stage/trees"]
