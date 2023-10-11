@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=3 uid="uid://5rrobgnot4xj"]
+
+[ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="1_24w0d"]
+[ext_resource type="PackedScene" uid="uid://duq4xt8ndpr6k" path="res://assets/models/level_blockouts/level_1_blockout.blend" id="2_wyex4"]
+[ext_resource type="Texture2D" uid="uid://cnlh0pshqvw0a" path="res://assets/textures/test_level/templategrid_albedo.png" id="3_xa4uk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uhyrb"]
+sky_material = SubResource("ProceduralSkyMaterial_kkydq")
+
+[sub_resource type="Environment" id="Environment_vp37x"]
+background_mode = 2
+sky = SubResource("Sky_uhyrb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aon8v"]
+albedo_texture = ExtResource("3_xa4uk")
+
+[node name="level_1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vp37x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("1_24w0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.43485, 0, -69.2091)
+
+[node name="level_1_blockout" parent="." instance=ExtResource("2_wyex4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179656, 0, 0.789923)
+
+[node name="Cube" parent="level_1_blockout" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cylinder_002" parent="level_1_blockout" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="water_path" parent="level_1_blockout" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_001" parent="level_1_blockout" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_002" parent="level_1_blockout" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_003" parent="level_1_blockout" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_004" parent="level_1_blockout" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_005" parent="level_1_blockout" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_006" parent="level_1_blockout" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_007" parent="level_1_blockout" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_008" parent="level_1_blockout" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_009" parent="level_1_blockout" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_010" parent="level_1_blockout" index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_011" parent="level_1_blockout" index="13"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_012" parent="level_1_blockout" index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_015" parent="level_1_blockout" index="15"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_017" parent="level_1_blockout" index="16"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_018" parent="level_1_blockout" index="17"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_019" parent="level_1_blockout" index="18"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_003_001" parent="level_1_blockout" index="19"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_004_001" parent="level_1_blockout" index="20"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_006_001" parent="level_1_blockout" index="21"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_007_001" parent="level_1_blockout" index="22"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_009_001" parent="level_1_blockout" index="23"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_012_001" parent="level_1_blockout" index="24"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_013" parent="level_1_blockout" index="25"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_014" parent="level_1_blockout" index="26"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_001_001" parent="level_1_blockout" index="27"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="Cube_013_001" parent="level_1_blockout" index="28"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="cube_001" parent="level_1_blockout" index="29"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="cube_002" parent="level_1_blockout" index="30"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="cube_005" parent="level_1_blockout" index="31"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[node name="cube_006" parent="level_1_blockout" index="32"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aon8v")
+
+[editable path="level_1_blockout"]

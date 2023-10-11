@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const movement_speed_walking:float = 3.0
-const movement_speed_sprinting:float = 5.0
+const movement_speed_walking:float = 5.0
+const movement_speed_sprinting:float = 8.0
 const jump_velocity:float = 4.5
 const mouse_sensitivity:float = 0.3
 
