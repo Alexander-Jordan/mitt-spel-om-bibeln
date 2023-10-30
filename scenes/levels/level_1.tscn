@@ -7,8 +7,10 @@
 [ext_resource type="Shader" uid="uid://4bkrirefulsf" path="res://assets/shaders/water.tres" id="5_tftl2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.364706, 0.439216, 0.721569, 1)
+sky_horizon_color = Color(0.607843, 0.745098, 0.733333, 1)
+ground_bottom_color = Color(0.427451, 0.513726, 0.415686, 1)
+ground_horizon_color = Color(0.607843, 0.67451, 0.682353, 1)
 
 [sub_resource type="Sky" id="Sky_uhyrb"]
 sky_material = SubResource("ProceduralSkyMaterial_kkydq")
@@ -44,7 +46,10 @@ environment = SubResource("Environment_vp37x")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.717647, 0.686275, 0.592157, 1)
+light_bake_mode = 1
 shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="player" parent="." instance=ExtResource("1_24w0d")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.72036, 3.28604, -56.65)
@@ -64,6 +69,24 @@ surface_material_override/0 = SubResource("ShaderMaterial_thwtw")
 
 [node name="level_1_blockout" parent="." instance=ExtResource("2_wyex4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179656, 0, 0.789923)
+
+[node name="mountain_3" parent="level_1_blockout" index="3"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_2" parent="level_1_blockout" index="5"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_2" parent="level_1_blockout" index="8"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_3" parent="level_1_blockout" index="9"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_2_001" parent="level_1_blockout" index="10"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_2_002" parent="level_1_blockout" index="11"]
+surface_material_override/0 = ExtResource("4_0h3yc")
 
 [node name="ground" parent="level_1_blockout" index="12"]
 surface_material_override/0 = ExtResource("4_0h3yc")

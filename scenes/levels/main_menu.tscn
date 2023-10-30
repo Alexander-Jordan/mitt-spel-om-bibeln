@@ -58,10 +58,12 @@ omni_range = 2.0
 [node name="light_cealing_lamp" type="OmniLight3D" parent="Background"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93174, 2.07612, 2.46044)
 light_color = Color(0.827451, 0.756863, 0.521569, 1)
+light_energy = 2.067
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.5
+omni_attenuation = 0.225313
 
 [node name="sovrum" parent="Background" instance=ExtResource("1_h6pfy")]
 
