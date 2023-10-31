@@ -7,8 +7,8 @@
 [ext_resource type="Shader" uid="uid://4bkrirefulsf" path="res://assets/shaders/water.tres" id="5_tftl2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
-sky_top_color = Color(0.364706, 0.439216, 0.721569, 1)
-sky_horizon_color = Color(0.607843, 0.745098, 0.733333, 1)
+sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
+sky_horizon_color = Color(0.6, 0.733333, 0.835294, 1)
 ground_bottom_color = Color(0.427451, 0.513726, 0.415686, 1)
 ground_horizon_color = Color(0.607843, 0.67451, 0.682353, 1)
 
@@ -19,7 +19,29 @@ sky_material = SubResource("ProceduralSkyMaterial_kkydq")
 background_mode = 2
 sky = SubResource("Sky_uhyrb")
 tonemap_mode = 2
+ssao_enabled = true
+ssil_enabled = true
+ssil_radius = 2.0
 glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_levels/6 = 1.0
+glow_levels/7 = 1.0
+glow_normalized = true
+glow_intensity = 0.1
+glow_blend_mode = 1
+fog_light_color = Color(0.611765, 0.52549, 0.529412, 1)
+fog_sun_scatter = 1.0
+fog_density = 0.001
+fog_sky_affect = 0.0
+fog_height = 5.0
+fog_height_density = 0.1
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.890196, 0.498039, 0.556863, 1)
+volumetric_fog_emission = Color(0.717647, 0.458824, 0.411765, 1)
+volumetric_fog_length = 32.0
+volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ar4yp"]
 render_priority = 0
@@ -47,6 +69,7 @@ environment = SubResource("Environment_vp37x")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_color = Color(0.717647, 0.686275, 0.592157, 1)
+light_angular_distance = 5.0
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_mode = 0
@@ -70,25 +93,70 @@ surface_material_override/0 = SubResource("ShaderMaterial_thwtw")
 [node name="level_1_blockout" parent="." instance=ExtResource("2_wyex4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179656, 0, 0.789923)
 
+[node name="fruittree_big_1_trunk" parent="level_1_blockout" index="0"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_1" parent="level_1_blockout/fruittree_big_1_trunk" index="0"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_2" parent="level_1_blockout/fruittree_big_1_trunk" index="1"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_3" parent="level_1_blockout/fruittree_big_1_trunk" index="2"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_4" parent="level_1_blockout/fruittree_big_1_trunk" index="3"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_5" parent="level_1_blockout/fruittree_big_1_trunk" index="4"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_trunk_001" parent="level_1_blockout" index="1"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_1_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="0"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_2_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="1"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_3_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="2"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_4_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="3"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="fruittree_big_1_leefs_5_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="4"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
 [node name="mountain_3" parent="level_1_blockout" index="3"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_1" parent="level_1_blockout" index="4"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
 [node name="mountain_2" parent="level_1_blockout" index="5"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="mountain_shelf_2" parent="level_1_blockout" index="8"]
+[node name="entreance_rock_2" parent="level_1_blockout" index="6"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="mountain_shelf_3" parent="level_1_blockout" index="9"]
+[node name="mountain_shelf_2" parent="level_1_blockout" index="7"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="mountain_shelf_2_001" parent="level_1_blockout" index="10"]
+[node name="mountain_shelf_3" parent="level_1_blockout" index="8"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="mountain_shelf_2_002" parent="level_1_blockout" index="11"]
+[node name="mountain_shelf_2_001" parent="level_1_blockout" index="9"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="ground" parent="level_1_blockout" index="12"]
+[node name="mountain_shelf_2_002" parent="level_1_blockout" index="10"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="ground" parent="level_1_blockout" index="11"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="entreance_rock_2_001" parent="level_1_blockout" index="13"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
 [editable path="level_1_blockout"]
