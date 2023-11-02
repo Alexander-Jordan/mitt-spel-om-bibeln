@@ -1,10 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://5rrobgnot4xj"]
+[gd_scene load_steps=31 format=3 uid="uid://5rrobgnot4xj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="1_24w0d"]
 [ext_resource type="Shader" uid="uid://ch4ubbuj6yqvk" path="res://assets/shaders/waterfall_shader.tres" id="2_e1lcb"]
 [ext_resource type="PackedScene" uid="uid://duq4xt8ndpr6k" path="res://assets/models/level_blockouts/level_1_blockout.blend" id="2_wyex4"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="4_0h3yc"]
 [ext_resource type="Shader" uid="uid://4bkrirefulsf" path="res://assets/shaders/water.tres" id="5_tftl2"]
+[ext_resource type="PackedScene" uid="uid://b3i4h25f0ipsj" path="res://scenes/trees/tree_forbidden.tscn" id="6_2x2ah"]
+[ext_resource type="PackedScene" uid="uid://b5x5vg2bbucao" path="res://scenes/trees/tree_pear_1.tscn" id="6_nklai"]
+[ext_resource type="PackedScene" uid="uid://byx5rnloo2u6u" path="res://scenes/trees/tree_apple_1.tscn" id="6_yfm8u"]
+[ext_resource type="PackedScene" uid="uid://uwwqx3fvjuym" path="res://scenes/trees/tree_apple_2.tscn" id="7_q5r48"]
+[ext_resource type="PackedScene" uid="uid://yiavl31xwl0p" path="res://scenes/trees/tree_apple_3.tscn" id="8_c3j6s"]
+[ext_resource type="PackedScene" uid="uid://g0rf1h4edm8e" path="res://scenes/trees/tree_orange_1.tscn" id="9_h8iay"]
+[ext_resource type="PackedScene" uid="uid://bqas88ibosbh2" path="res://scenes/trees/tree_orange_3.tscn" id="10_ewfrv"]
+[ext_resource type="PackedScene" uid="uid://dj20autcmurci" path="res://scenes/trees/tree_banana_1.tscn" id="10_vwibj"]
+[ext_resource type="PackedScene" uid="uid://qr4kfvhpqwsg" path="res://scenes/trees/tree_orange_2.tscn" id="11_8un8k"]
+[ext_resource type="PackedScene" uid="uid://uv7rd7g4i0ne" path="res://scenes/trees/tree_banana_2.tscn" id="11_yxcqm"]
+[ext_resource type="PackedScene" uid="uid://d1w0bv0dpj7ix" path="res://scenes/trees/tree_mango_1.tscn" id="12_k4j2n"]
+[ext_resource type="PackedScene" uid="uid://crnlf416nmwnq" path="res://scenes/trees/tree_mango_2.tscn" id="13_8xbs4"]
+[ext_resource type="PackedScene" uid="uid://ceo1nyts0730i" path="res://scenes/trees/tree_pear_2.tscn" id="13_ifvwb"]
+[ext_resource type="PackedScene" uid="uid://oeaabkkco7ir" path="res://scenes/trees/tree_mango_3.tscn" id="14_g85io"]
+[ext_resource type="PackedScene" uid="uid://474bpac2202" path="res://scenes/trees/tree_pear_3.tscn" id="14_hugbn"]
+[ext_resource type="PackedScene" uid="uid://8ym4u015axlk" path="res://scenes/trees/tree_pomegranate_1.tscn" id="21_i554t"]
+[ext_resource type="PackedScene" uid="uid://d0hvk657nlolu" path="res://scenes/trees/tree_pomegranate_2.tscn" id="22_ekf5t"]
+[ext_resource type="PackedScene" uid="uid://8hgt1xu2uqvj" path="res://scenes/trees/tree_pomegranate_3.tscn" id="23_55aau"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
 sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
@@ -93,70 +111,90 @@ surface_material_override/0 = SubResource("ShaderMaterial_thwtw")
 [node name="level_1_blockout" parent="." instance=ExtResource("2_wyex4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179656, 0, 0.789923)
 
-[node name="fruittree_big_1_trunk" parent="level_1_blockout" index="0"]
+[node name="mountain_3" parent="level_1_blockout" index="1"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_1" parent="level_1_blockout/fruittree_big_1_trunk" index="0"]
+[node name="mountain_1" parent="level_1_blockout" index="2"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_2" parent="level_1_blockout/fruittree_big_1_trunk" index="1"]
+[node name="mountain_2" parent="level_1_blockout" index="3"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_3" parent="level_1_blockout/fruittree_big_1_trunk" index="2"]
+[node name="entreance_rock_2" parent="level_1_blockout" index="4"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_4" parent="level_1_blockout/fruittree_big_1_trunk" index="3"]
+[node name="mountain_shelf_2" parent="level_1_blockout" index="5"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_5" parent="level_1_blockout/fruittree_big_1_trunk" index="4"]
+[node name="mountain_shelf_3" parent="level_1_blockout" index="6"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_trunk_001" parent="level_1_blockout" index="1"]
+[node name="mountain_shelf_2_001" parent="level_1_blockout" index="7"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_1_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="0"]
+[node name="mountain_shelf_2_002" parent="level_1_blockout" index="8"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_2_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="1"]
+[node name="ground" parent="level_1_blockout" index="9"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_3_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="2"]
+[node name="entreance_rock_2_001" parent="level_1_blockout" index="11"]
 surface_material_override/0 = ExtResource("4_0h3yc")
 
-[node name="fruittree_big_1_leefs_4_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="3"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="trees" type="Node3D" parent="."]
 
-[node name="fruittree_big_1_leefs_5_001" parent="level_1_blockout/fruittree_big_1_trunk_001" index="4"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_forbidden" parent="trees" instance=ExtResource("6_2x2ah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01273, 4.4116, 13.8365)
 
-[node name="mountain_3" parent="level_1_blockout" index="3"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_apple_1" parent="trees" instance=ExtResource("6_yfm8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8207, 2.60734, -11.785)
 
-[node name="mountain_1" parent="level_1_blockout" index="4"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_apple_2" parent="trees" instance=ExtResource("7_q5r48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1882, 3.4519, -19.6587)
 
-[node name="mountain_2" parent="level_1_blockout" index="5"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_apple_3" parent="trees" instance=ExtResource("8_c3j6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.999, 3.18191, 45.0831)
 
-[node name="entreance_rock_2" parent="level_1_blockout" index="6"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_banana_1" parent="trees" instance=ExtResource("10_vwibj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1098, 2.02075, -8.8587)
 
-[node name="mountain_shelf_2" parent="level_1_blockout" index="7"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_banana_2" parent="trees" instance=ExtResource("11_yxcqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2837, 2.29471, 54.0267)
 
-[node name="mountain_shelf_3" parent="level_1_blockout" index="8"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_mango_1" parent="trees" instance=ExtResource("12_k4j2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6364, 2.71576, -12.8065)
 
-[node name="mountain_shelf_2_001" parent="level_1_blockout" index="9"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_mango_2" parent="trees" instance=ExtResource("13_8xbs4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9789, 4.44748, -35.2512)
 
-[node name="mountain_shelf_2_002" parent="level_1_blockout" index="10"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_mango_3" parent="trees" instance=ExtResource("14_g85io")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.1167, 2.2798, -22.3883)
 
-[node name="ground" parent="level_1_blockout" index="11"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_orange_1" parent="trees" instance=ExtResource("9_h8iay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5019, 2.85559, 44.2524)
 
-[node name="entreance_rock_2_001" parent="level_1_blockout" index="13"]
-surface_material_override/0 = ExtResource("4_0h3yc")
+[node name="tree_orange_2" parent="trees" instance=ExtResource("11_8un8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.8074, 2.1871, 50.8405)
+
+[node name="tree_orange_3" parent="trees" instance=ExtResource("10_ewfrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.3988, 2.89983, -3.00081)
+
+[node name="tree_pear_1" parent="trees" instance=ExtResource("6_nklai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.865, 2.02617, 10.8558)
+
+[node name="tree_pear_2" parent="trees" instance=ExtResource("13_ifvwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9844, 2.94524, 66.1673)
+
+[node name="tree_pear_3" parent="trees" instance=ExtResource("14_hugbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3688, 2.87483, 68.8471)
+
+[node name="tree_pomegranate_1" parent="trees" instance=ExtResource("21_i554t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5049, 2.35869, -38.7145)
+
+[node name="tree_pomegranate_2" parent="trees" instance=ExtResource("22_ekf5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.454, 3.12871, 36.5234)
+
+[node name="tree_pomegranate_3" parent="trees" instance=ExtResource("23_55aau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2311, 2.63503, 67.9742)
 
 [editable path="level_1_blockout"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://crnlf416nmwnq"]
+
+[ext_resource type="PackedScene" uid="uid://bjoh16lyeq3uk" path="res://assets/models/nature/trees/fruittrees/tree_mango_2.glb" id="1_f1kg3"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_1k7e1"]
+[ext_resource type="Material" uid="uid://jhgkkkgmghi4" path="res://assets/materials/tree_leaf_material.tres" id="3_0xilt"]
+
+[node name="tree_mango_2" instance=ExtResource("1_f1kg3")]
+
+[node name="tree_mango_2_trunk" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1k7e1")
+
+[node name="tree_mango_2_leaves_1" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_0xilt")
+
+[node name="tree_mango_2_leaves_2" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_0xilt")
+
+[node name="tree_mango_2_leaves_3" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_0xilt")
+
+[node name="tree_mango_2_leaves_4" parent="." index="4"]
+surface_material_override/0 = ExtResource("3_0xilt")

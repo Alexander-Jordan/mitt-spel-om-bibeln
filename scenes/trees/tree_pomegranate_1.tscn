@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ym4u015axlk"]
+
+[ext_resource type="PackedScene" uid="uid://c7bmf8a0qju5m" path="res://assets/models/nature/trees/fruittrees/tree_pomegranate_1.glb" id="1_acn2w"]
+[ext_resource type="Material" uid="uid://jhgkkkgmghi4" path="res://assets/materials/tree_leaf_material.tres" id="2_nmcbb"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="3_u6g14"]
+
+[node name="tree_pomegranate_1" instance=ExtResource("1_acn2w")]
+
+[node name="tree_pomegranate_1_leefs_1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nmcbb")
+
+[node name="tree_pomegranate_1_leefs_2" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_nmcbb")
+
+[node name="tree_pomegranate_1_leefs_3" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_nmcbb")
+
+[node name="tree_pomegranate_1_trunk" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_u6g14")
