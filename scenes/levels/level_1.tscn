@@ -1,0 +1,200 @@
+[gd_scene load_steps=31 format=3 uid="uid://5rrobgnot4xj"]
+
+[ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="1_24w0d"]
+[ext_resource type="Shader" uid="uid://ch4ubbuj6yqvk" path="res://assets/shaders/waterfall_shader.tres" id="2_e1lcb"]
+[ext_resource type="PackedScene" uid="uid://duq4xt8ndpr6k" path="res://assets/models/level_blockouts/level_1_blockout.blend" id="2_wyex4"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="4_0h3yc"]
+[ext_resource type="Shader" uid="uid://4bkrirefulsf" path="res://assets/shaders/water.tres" id="5_tftl2"]
+[ext_resource type="PackedScene" uid="uid://b3i4h25f0ipsj" path="res://scenes/trees/tree_forbidden.tscn" id="6_2x2ah"]
+[ext_resource type="PackedScene" uid="uid://b5x5vg2bbucao" path="res://scenes/trees/tree_pear_1.tscn" id="6_nklai"]
+[ext_resource type="PackedScene" uid="uid://byx5rnloo2u6u" path="res://scenes/trees/tree_apple_1.tscn" id="6_yfm8u"]
+[ext_resource type="PackedScene" uid="uid://uwwqx3fvjuym" path="res://scenes/trees/tree_apple_2.tscn" id="7_q5r48"]
+[ext_resource type="PackedScene" uid="uid://yiavl31xwl0p" path="res://scenes/trees/tree_apple_3.tscn" id="8_c3j6s"]
+[ext_resource type="PackedScene" uid="uid://g0rf1h4edm8e" path="res://scenes/trees/tree_orange_1.tscn" id="9_h8iay"]
+[ext_resource type="PackedScene" uid="uid://bqas88ibosbh2" path="res://scenes/trees/tree_orange_3.tscn" id="10_ewfrv"]
+[ext_resource type="PackedScene" uid="uid://dj20autcmurci" path="res://scenes/trees/tree_banana_1.tscn" id="10_vwibj"]
+[ext_resource type="PackedScene" uid="uid://qr4kfvhpqwsg" path="res://scenes/trees/tree_orange_2.tscn" id="11_8un8k"]
+[ext_resource type="PackedScene" uid="uid://uv7rd7g4i0ne" path="res://scenes/trees/tree_banana_2.tscn" id="11_yxcqm"]
+[ext_resource type="PackedScene" uid="uid://d1w0bv0dpj7ix" path="res://scenes/trees/tree_mango_1.tscn" id="12_k4j2n"]
+[ext_resource type="PackedScene" uid="uid://crnlf416nmwnq" path="res://scenes/trees/tree_mango_2.tscn" id="13_8xbs4"]
+[ext_resource type="PackedScene" uid="uid://ceo1nyts0730i" path="res://scenes/trees/tree_pear_2.tscn" id="13_ifvwb"]
+[ext_resource type="PackedScene" uid="uid://oeaabkkco7ir" path="res://scenes/trees/tree_mango_3.tscn" id="14_g85io"]
+[ext_resource type="PackedScene" uid="uid://474bpac2202" path="res://scenes/trees/tree_pear_3.tscn" id="14_hugbn"]
+[ext_resource type="PackedScene" uid="uid://8ym4u015axlk" path="res://scenes/trees/tree_pomegranate_1.tscn" id="21_i554t"]
+[ext_resource type="PackedScene" uid="uid://d0hvk657nlolu" path="res://scenes/trees/tree_pomegranate_2.tscn" id="22_ekf5t"]
+[ext_resource type="PackedScene" uid="uid://8hgt1xu2uqvj" path="res://scenes/trees/tree_pomegranate_3.tscn" id="23_55aau"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
+sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
+sky_horizon_color = Color(0.6, 0.733333, 0.835294, 1)
+ground_bottom_color = Color(0.427451, 0.513726, 0.415686, 1)
+ground_horizon_color = Color(0.607843, 0.67451, 0.682353, 1)
+
+[sub_resource type="Sky" id="Sky_uhyrb"]
+sky_material = SubResource("ProceduralSkyMaterial_kkydq")
+
+[sub_resource type="Environment" id="Environment_vp37x"]
+background_mode = 2
+sky = SubResource("Sky_uhyrb")
+tonemap_mode = 2
+ssao_enabled = true
+ssil_enabled = true
+ssil_radius = 2.0
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_levels/6 = 1.0
+glow_levels/7 = 1.0
+glow_normalized = true
+glow_intensity = 0.1
+glow_blend_mode = 1
+fog_light_color = Color(0.611765, 0.52549, 0.529412, 1)
+fog_sun_scatter = 1.0
+fog_density = 0.001
+fog_sky_affect = 0.0
+fog_height = 5.0
+fog_height_density = 0.1
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.890196, 0.498039, 0.556863, 1)
+volumetric_fog_emission = Color(0.717647, 0.458824, 0.411765, 1)
+volumetric_fog_length = 32.0
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ar4yp"]
+render_priority = 0
+shader = ExtResource("2_e1lcb")
+shader_parameter/Color = Color(0.062159, 0.33335, 0.999998, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mgjui"]
+material = SubResource("ShaderMaterial_ar4yp")
+size = Vector3(15, 35, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3g1nn"]
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thwtw"]
+render_priority = 0
+shader = ExtResource("5_tftl2")
+
+[node name="level_1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vp37x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.717647, 0.686275, 0.592157, 1)
+light_angular_distance = 5.0
+light_bake_mode = 1
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="player" parent="." instance=ExtResource("1_24w0d")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.72036, 3.28604, -56.65)
+
+[node name="waterfall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.4263, 0, 0, 0, 1, -0.103426, 23.9037, 110.874)
+mesh = SubResource("BoxMesh_mgjui")
+
+[node name="waterfall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.74846e-07, -1, 0, 4, -4.37114e-08, -0.103426, 48.513, 181.279)
+mesh = SubResource("BoxMesh_mgjui")
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 500, 0, 1.5, 0)
+mesh = SubResource("QuadMesh_3g1nn")
+surface_material_override/0 = SubResource("ShaderMaterial_thwtw")
+
+[node name="level_1_blockout" parent="." instance=ExtResource("2_wyex4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179656, 0, 0.789923)
+
+[node name="mountain_3" parent="level_1_blockout" index="1"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_1" parent="level_1_blockout" index="2"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_2" parent="level_1_blockout" index="3"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="entreance_rock_2" parent="level_1_blockout" index="4"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_2" parent="level_1_blockout" index="5"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_3" parent="level_1_blockout" index="6"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_2_001" parent="level_1_blockout" index="7"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="mountain_shelf_2_002" parent="level_1_blockout" index="8"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="ground" parent="level_1_blockout" index="9"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="entreance_rock_2_001" parent="level_1_blockout" index="11"]
+surface_material_override/0 = ExtResource("4_0h3yc")
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="tree_forbidden" parent="trees" instance=ExtResource("6_2x2ah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01273, 4.4116, 13.8365)
+
+[node name="tree_apple_1" parent="trees" instance=ExtResource("6_yfm8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8207, 2.60734, -11.785)
+
+[node name="tree_apple_2" parent="trees" instance=ExtResource("7_q5r48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.1882, 3.4519, -19.6587)
+
+[node name="tree_apple_3" parent="trees" instance=ExtResource("8_c3j6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.999, 3.18191, 45.0831)
+
+[node name="tree_banana_1" parent="trees" instance=ExtResource("10_vwibj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1098, 2.02075, -8.8587)
+
+[node name="tree_banana_2" parent="trees" instance=ExtResource("11_yxcqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2837, 2.29471, 54.0267)
+
+[node name="tree_mango_1" parent="trees" instance=ExtResource("12_k4j2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6364, 2.71576, -12.8065)
+
+[node name="tree_mango_2" parent="trees" instance=ExtResource("13_8xbs4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9789, 4.44748, -35.2512)
+
+[node name="tree_mango_3" parent="trees" instance=ExtResource("14_g85io")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.1167, 2.2798, -22.3883)
+
+[node name="tree_orange_1" parent="trees" instance=ExtResource("9_h8iay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5019, 2.85559, 44.2524)
+
+[node name="tree_orange_2" parent="trees" instance=ExtResource("11_8un8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.8074, 2.1871, 50.8405)
+
+[node name="tree_orange_3" parent="trees" instance=ExtResource("10_ewfrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.3988, 2.89983, -3.00081)
+
+[node name="tree_pear_1" parent="trees" instance=ExtResource("6_nklai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.865, 2.02617, 10.8558)
+
+[node name="tree_pear_2" parent="trees" instance=ExtResource("13_ifvwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9844, 2.94524, 66.1673)
+
+[node name="tree_pear_3" parent="trees" instance=ExtResource("14_hugbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3688, 2.87483, 68.8471)
+
+[node name="tree_pomegranate_1" parent="trees" instance=ExtResource("21_i554t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5049, 2.35869, -38.7145)
+
+[node name="tree_pomegranate_2" parent="trees" instance=ExtResource("22_ekf5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.454, 3.12871, 36.5234)
+
+[node name="tree_pomegranate_3" parent="trees" instance=ExtResource("23_55aau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2311, 2.63503, 67.9742)
+
+[editable path="level_1_blockout"]

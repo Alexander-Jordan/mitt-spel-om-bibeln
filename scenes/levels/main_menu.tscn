@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=12 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_4cpw2"]
 [ext_resource type="Script" path="res://scripts/menu/main_menu_camera_manager.gd" id="2_5fxog"]
 [ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="3_8qya4"]
 [ext_resource type="Texture2D" uid="uid://3mxvjjlhp3du" path="res://assets/icons/cross.svg" id="4_11fsp"]
@@ -10,7 +11,6 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr1cl"]
 sky_top_color = Color(0.643137, 0.65098, 0.768627, 1)
 sky_horizon_color = Color(0.710784, 0.704995, 0.725407, 1)
-sky_energy_multiplier = 1.5
 ground_horizon_color = Color(0.710784, 0.704995, 0.725407, 1)
 
 [sub_resource type="Sky" id="Sky_bjyto"]
@@ -20,14 +20,12 @@ sky_material = SubResource("ProceduralSkyMaterial_qr1cl")
 background_mode = 2
 sky = SubResource("Sky_bjyto")
 tonemap_mode = 2
-glow_enabled = true
-fog_enabled = true
 fog_light_energy = 0.7
 fog_sun_scatter = 1.0
-fog_sky_affect = 0.5
+fog_sky_affect = 0.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.2
-volumetric_fog_sky_affect = 0.2
+volumetric_fog_density = 0.5
+volumetric_fog_sky_affect = 0.5
 
 [sub_resource type="Theme" id="Theme_cw3cf"]
 default_font = ExtResource("1_hdq7i")
@@ -40,13 +38,100 @@ default_font_size = 30
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
 environment = SubResource("Environment_2fe4c")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background"]
-transform = Transform3D(-0.083678, 0.519182, -0.850557, 0, 0.853551, 0.52101, 0.996493, 0.0435971, -0.0714234, 0, 0, 0)
+[node name="sun" type="DirectionalLight3D" parent="Background"]
+transform = Transform3D(-0.083678, 0.519182, -0.850557, 0, 0.853551, 0.521009, 0.996493, 0.043597, -0.0714234, 0, 0, 0)
 light_color = Color(1, 0.705882, 0.521569, 1)
-light_energy = 4.0
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
 shadow_enabled = true
 
+[node name="light_desk_lamp" type="OmniLight3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54114, 0.759424, 0.349259)
+light_color = Color(0.839216, 0.603922, 0, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.5
+omni_range = 2.0
+
+[node name="light_cealing_lamp" type="OmniLight3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93174, 2.07612, 2.46044)
+light_color = Color(0.827451, 0.756863, 0.521569, 1)
+light_energy = 2.067
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.5
+omni_attenuation = 0.225313
+
 [node name="sovrum" parent="Background" instance=ExtResource("1_h6pfy")]
+
+[node name="matta" parent="Background/sovrum" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="sängbord" parent="Background/sovrum" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="sängbord_låda" parent="Background/sovrum/sängbord" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="sängbord_låda_2" parent="Background/sovrum/sängbord" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_ram" parent="Background/sovrum" index="2"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_kudde" parent="Background/sovrum/säng_ram" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_madrass" parent="Background/sovrum/säng_ram" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="säng_täcke" parent="Background/sovrum/säng_ram" index="2"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_ram" parent="Background/sovrum" index="3"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_h" parent="Background/sovrum/garderob_ram" index="0"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_mh" parent="Background/sovrum/garderob_ram" index="1"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_mh_001" parent="Background/sovrum/garderob_ram" index="2"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_dörr_v" parent="Background/sovrum/garderob_ram" index="3"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_låda" parent="Background/sovrum/garderob_ram" index="4"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="garderob_låda_2" parent="Background/sovrum/garderob_ram" index="5"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="Cube" parent="Background/sovrum" index="4"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="tak" parent="Background/sovrum" index="5"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="vägg1" parent="Background/sovrum" index="6"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="vägg2" parent="Background/sovrum" index="7"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="vägg3" parent="Background/sovrum" index="8"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="vägg4" parent="Background/sovrum" index="9"]
+surface_material_override/0 = ExtResource("2_4cpw2")
+
+[node name="golv" parent="Background/sovrum" index="10"]
+surface_material_override/0 = ExtResource("2_4cpw2")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
 anchors_preset = 15
@@ -64,13 +149,13 @@ render_target_update_mode = 4
 script = ExtResource("2_5fxog")
 
 [node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76458, 0.611002, 3.09443)
+transform = Transform3D(0.838965, 0.190542, -0.509736, 1.36786e-08, 0.936697, 0.350142, 0.544185, -0.293757, 0.785856, 0.456742, 1.28222, 3.1742)
 
 [node name="MainCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76458, 0.611002, 3.09443)
+transform = Transform3D(0.838965, 0.190542, -0.509736, 1.36786e-08, 0.936697, 0.350142, 0.544185, -0.293757, 0.785856, 0.456742, 1.28222, 3.1742)
 
 [node name="LevelsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
-transform = Transform3D(-4.37114e-08, 0.731354, -0.681998, 0, 0.681998, 0.731354, 1, 3.19685e-08, -2.98111e-08, 0.703828, 1.08335, 1.28607)
+transform = Transform3D(0.933916, 0.34795, -0.0820478, 0.00214303, 0.224056, 0.974574, 0.357486, -0.910346, 0.208504, 0.653782, 0.694648, 0.909354)
 
 [node name="MenuUI" type="Control" parent="."]
 layout_mode = 3

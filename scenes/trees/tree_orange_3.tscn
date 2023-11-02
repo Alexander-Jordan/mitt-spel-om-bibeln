@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqas88ibosbh2"]
+
+[ext_resource type="PackedScene" uid="uid://dro7i4ggka5bs" path="res://assets/models/nature/trees/fruittrees/tree_orange_3.glb" id="1_jjc2y"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_ivvls"]
+[ext_resource type="Material" uid="uid://jhgkkkgmghi4" path="res://assets/materials/tree_leaf_material.tres" id="3_ojvpn"]
+
+[node name="tree_orange_3" instance=ExtResource("1_jjc2y")]
+
+[node name="fruittree_small_3_trunk_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ivvls")
+
+[node name="fruittree_small_3_leefs_1_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_ojvpn")
+
+[node name="fruittree_small_3_leefs_4_001" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_ojvpn")
+
+[node name="fruittree_small_3_leefs_3_001" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_ojvpn")
+
+[node name="fruittree_small_3_leefs_2_001" parent="." index="4"]
+surface_material_override/0 = ExtResource("3_ojvpn")

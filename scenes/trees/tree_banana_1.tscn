@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj20autcmurci"]
+
+[ext_resource type="PackedScene" uid="uid://rqhqsv3q3xbi" path="res://assets/models/nature/trees/fruittrees/tree_banana_1.glb" id="1_tf502"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_q4nut"]
+[ext_resource type="Material" uid="uid://jhgkkkgmghi4" path="res://assets/materials/tree_leaf_material.tres" id="3_6u74l"]
+
+[node name="tree_banana_1" instance=ExtResource("1_tf502")]
+
+[node name="tree_banana_1_trunk" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_q4nut")
+
+[node name="tree_banana_1_leaf_1" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_6u74l")
+
+[node name="tree_banana_1_leaf_2" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_6u74l")
+
+[node name="tree_banana_1_leaf_3" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_6u74l")
+
+[node name="tree_banana_1_leaf_4" parent="." index="4"]
+surface_material_override/0 = ExtResource("3_6u74l")

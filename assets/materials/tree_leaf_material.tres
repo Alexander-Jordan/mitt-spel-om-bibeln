@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://jhgkkkgmghi4"]
+
+[ext_resource type="Shader" uid="uid://ca7581alh2hpt" path="res://assets/shaders/tree_leaf_shader.tres" id="1_x711p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_x711p")
+shader_parameter/Sway_Strength = 0.01
+shader_parameter/EmissionStrength = 3.0

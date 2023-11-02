@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://474bpac2202"]
+
+[ext_resource type="PackedScene" uid="uid://dr1sye2sele43" path="res://assets/models/nature/trees/fruittrees/tree_pear_3.glb" id="1_21p6s"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_l5r4s"]
+[ext_resource type="Material" uid="uid://jhgkkkgmghi4" path="res://assets/materials/tree_leaf_material.tres" id="3_dcsjv"]
+
+[node name="tree_pear_3" instance=ExtResource("1_21p6s")]
+
+[node name="fruittree_small_3_trunk" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_l5r4s")
+
+[node name="fruittree_small_3_leefs_1" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_dcsjv")
+
+[node name="fruittree_small_3_leefs_4" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_dcsjv")
+
+[node name="fruittree_small_3_leefs_3" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_dcsjv")
+
+[node name="fruittree_small_3_leefs_2" parent="." index="4"]
+surface_material_override/0 = ExtResource("3_dcsjv")
