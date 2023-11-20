@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2xqqsj7e26uh"]
+
+[ext_resource type="PackedScene" uid="uid://ddi5jq7ae26hq" path="res://assets/models/animals/fox/fox.glb" id="1_k2ktq"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_ebcsr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdcqa"]
+size = Vector3(0.3, 0.7, 1)
+
+[node name="fox" instance=ExtResource("1_k2ktq")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/position = Vector3(1.60957e-08, 0.263313, 0.422686)
+bones/1/rotation = Quaternion(0.127691, -0.695482, -0.12769, 0.695482)
+bones/2/rotation = Quaternion(-1.17669e-07, -3.91844e-08, -0.590416, 0.807099)
+bones/3/rotation = Quaternion(4.50931e-08, 9.58326e-10, 0.017412, 0.999848)
+bones/4/rotation = Quaternion(-3.56663e-08, 1.19234e-08, 0.303379, 0.95287)
+bones/5/rotation = Quaternion(6.23724e-08, -2.15767e-08, -0.400285, 0.916391)
+bones/6/rotation = Quaternion(0.000467341, -0.000446183, -0.712179, 0.701998)
+bones/7/rotation = Quaternion(6.41676e-08, -7.21317e-08, 0.0371257, 0.999311)
+bones/8/rotation = Quaternion(-0.0120374, -0.00782215, 0.460562, 0.887511)
+bones/9/rotation = Quaternion(0.000497276, -0.000882227, -0.712087, 0.70209)
+bones/10/rotation = Quaternion(4.45802e-08, -7.28034e-08, 0.0371257, 0.999311)
+bones/11/rotation = Quaternion(0.016518, 0.0140138, 0.460076, 0.887616)
+bones/12/rotation = Quaternion(1.76326e-09, 3.42297e-07, 0.981893, 0.189437)
+bones/13/rotation = Quaternion(-9.21666e-09, 3.43023e-08, -0.0696173, 0.997574)
+bones/14/rotation = Quaternion(-1.88266e-09, 6.29389e-08, -0.0538327, 0.99855)
+bones/15/rotation = Quaternion(1.3558e-05, 0.00017176, -0.970016, 0.243041)
+bones/16/rotation = Quaternion(-1.84774e-08, 9.36069e-08, -0.368044, 0.929808)
+bones/17/rotation = Quaternion(0.000248503, 5.08402e-05, 0.458484, 0.888703)
+bones/19/rotation = Quaternion(-5.65351e-08, -5.07787e-07, -0.969959, 0.24327)
+bones/20/rotation = Quaternion(-1.84562e-08, 9.36016e-08, -0.368044, 0.929808)
+bones/21/rotation = Quaternion(-0.000153384, -7.91046e-05, 0.457909, 0.888999)
+
+[node name="fox1" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_ebcsr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton3D/fox1" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/fox1/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.075)
+shape = SubResource("BoxShape3D_sdcqa")
