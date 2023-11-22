@@ -6,3 +6,4 @@
 - [Low poly angry looking hippo](https://skfb.ly/6TJVE) by Tiberiu Uncu is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
 - [Long Fish](https://skfb.ly/6xQvR) by Bent Polygon is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
 - [Low poly rabbit](https://skfb.ly/o7WyS) by Tin3D is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
+[Low poly western meadowlark (Sturnella neglecta)](https://skfb.ly/otsOs) by Natural History Museum of Los Angeles County is licensed under [CC Attribution-NonCommercial-ShareAlike](http://creativecommons.org/licenses/by-nc-sa/4.0/).

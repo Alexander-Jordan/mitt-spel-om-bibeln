@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1l3b4xe7vnim"]
+
+[ext_resource type="PackedScene" uid="uid://bubsbvo4mrulk" path="res://assets/models/animals/bison/bison.glb" id="1_03243"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_3bgcp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_soy4g"]
+size = Vector3(0.9, 2.2, 3.5)
+
+[node name="bison" instance=ExtResource("1_03243")]
+
+[node name="bizon" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3bgcp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.5)
+shape = SubResource("BoxShape3D_soy4g")

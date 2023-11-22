@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://rimdxvki8pcv"]
+
+[ext_resource type="PackedScene" uid="uid://c5cntlykqr8bt" path="res://assets/models/animals/parrot/parrot.glb" id="1_d2i2q"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_b55aq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opv85"]
+size = Vector3(0.078, 0.16, 0.182)
+
+[node name="parrot" instance=ExtResource("1_d2i2q")]
+
+[node name="parrot2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_b55aq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, -0.00563424)
+shape = SubResource("BoxShape3D_opv85")
