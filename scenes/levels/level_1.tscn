@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://5rrobgnot4xj"]
+[gd_scene load_steps=46 format=3 uid="uid://5rrobgnot4xj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="1_24w0d"]
 [ext_resource type="Shader" uid="uid://ch4ubbuj6yqvk" path="res://assets/shaders/waterfall_shader.tres" id="2_e1lcb"]
@@ -24,6 +24,18 @@
 [ext_resource type="PackedScene" uid="uid://d0hvk657nlolu" path="res://scenes/trees/tree_pomegranate_2.tscn" id="22_ekf5t"]
 [ext_resource type="PackedScene" uid="uid://8hgt1xu2uqvj" path="res://scenes/trees/tree_pomegranate_3.tscn" id="23_55aau"]
 [ext_resource type="PackedScene" uid="uid://x0drlek7boqf" path="res://assets/models/godzilla/gojira.glb" id="24_3b2o3"]
+[ext_resource type="PackedScene" uid="uid://c8aht1btej274" path="res://scenes/animals/mountain_puma.tscn" id="25_0wtin"]
+[ext_resource type="PackedScene" uid="uid://pyfp2c54twv8" path="res://scenes/animals/elephant.tscn" id="26_i2g3q"]
+[ext_resource type="PackedScene" uid="uid://daqfwg7jjmexg" path="res://scenes/animals/giraffe.tscn" id="27_kpcmi"]
+[ext_resource type="PackedScene" uid="uid://dpyuilaqkpgav" path="res://scenes/animals/hippo.tscn" id="28_igngs"]
+[ext_resource type="PackedScene" uid="uid://bncdtqbes2jb5" path="res://scenes/animals/deer_male.tscn" id="29_ss6vi"]
+[ext_resource type="PackedScene" uid="uid://n3m2ov55a10j" path="res://scenes/animals/deer_female.tscn" id="30_cj6hb"]
+[ext_resource type="PackedScene" uid="uid://cs2npd8q8sl7d" path="res://scenes/animals/bear.tscn" id="31_q81ea"]
+[ext_resource type="PackedScene" uid="uid://b1l3b4xe7vnim" path="res://scenes/animals/bison.tscn" id="32_rqlhw"]
+[ext_resource type="PackedScene" uid="uid://c4yj6pycwdwda" path="res://scenes/animals/cow.tscn" id="33_n7t61"]
+[ext_resource type="PackedScene" uid="uid://b2xqqsj7e26uh" path="res://scenes/animals/fox.tscn" id="34_cwcdq"]
+[ext_resource type="PackedScene" uid="uid://bojqrfkq2p2cm" path="res://scenes/animals/rabbit.tscn" id="35_0x1a6"]
+[ext_resource type="PackedScene" uid="uid://bdi2ln45i6rvk" path="res://scenes/animals/sheep.tscn" id="36_6cq4q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
 sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
@@ -1490,7 +1502,7 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="player" parent="." instance=ExtResource("1_24w0d")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.72036, 3.28604, -56.65)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -130.918, 20.2614, -73.0586)
 
 [node name="waterfall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.4263, 0, 0, 0, 1, -0.103426, 23.9037, 110.874)
@@ -1802,6 +1814,156 @@ autoplay = "new_animation"
 libraries = {
 "": SubResource("AnimationLibrary_swte7")
 }
+
+[node name="animals" type="Node3D" parent="."]
+
+[node name="elephants" type="Node3D" parent="animals"]
+
+[node name="elephant" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
+transform = Transform3D(1, 0, 0, 0, 0.998926, -0.0463393, 0, 0.0463393, 0.998926, -95.1674, 3.03418, -4.35932)
+
+[node name="elephant2" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
+transform = Transform3D(0.605176, -0.019065, -0.665881, -9.31323e-10, 0.899631, -0.0257575, 0.666154, 0.0173198, 0.604929, -88.8528, 2.83427, -2.32671)
+
+[node name="elephant3" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
+transform = Transform3D(0.387318, 0, -0.0999222, -0.00761029, 0.398838, -0.029499, 0.0996319, 0.0304649, 0.386193, -91.9329, 2.91529, -2.30161)
+
+[node name="giraffes" type="Node3D" parent="animals"]
+
+[node name="giraffe" parent="animals/giraffes" instance=ExtResource("27_kpcmi")]
+transform = Transform3D(-1.45246, 0, -0.374657, 0, 1.5, 0, 0.374657, 0, -1.45246, -56.3837, 2.93229, -11.2956)
+
+[node name="giraffe2" parent="animals/giraffes" instance=ExtResource("27_kpcmi")]
+transform = Transform3D(-1.41376, 0, -0.944075, 0, 1.7, 0, 0.944075, 0, -1.41376, -58.7991, 2.93229, -10.6077)
+
+[node name="hippos" type="Node3D" parent="animals"]
+
+[node name="hippo" parent="animals/hippos" instance=ExtResource("28_igngs")]
+transform = Transform3D(-0.549484, 0, -1.39573, 0, 1.5, 0, 1.39573, 0, -0.549484, -44.9794, 2.23984, 35.2597)
+
+[node name="hippo3" parent="animals/hippos" instance=ExtResource("28_igngs")]
+transform = Transform3D(-0.800651, 0, 0.893845, 0, 1.2, 0, -0.893845, 0, -0.800651, -55.5935, 2.23984, 31.0811)
+
+[node name="hippo2" parent="animals/hippos" instance=ExtResource("28_igngs")]
+transform = Transform3D(-1.44653, -0.184127, -0.351641, -0.179079, 1.48866, -0.0428241, 0.354239, 0.000683408, -1.45757, -41.8447, 0.400462, 29.5788)
+
+[node name="deers" type="Node3D" parent="animals"]
+
+[node name="deer_male" parent="animals/deers" instance=ExtResource("29_ss6vi")]
+transform = Transform3D(0.763368, 0.019862, -0.645659, 1.86265e-09, 0.999527, 0.0307479, 0.645964, -0.0234719, 0.763007, -5.92349, 2.14572, -28.1571)
+
+[node name="deer_male2" parent="animals/deers" instance=ExtResource("29_ss6vi")]
+transform = Transform3D(0.698325, -0.0392398, 0.714704, -0.0175291, 0.997259, 0.0718804, -0.715566, -0.062724, 0.695724, 10.0709, 2.6183, -14.6233)
+
+[node name="deer_female" parent="animals/deers" instance=ExtResource("30_cj6hb")]
+transform = Transform3D(0.975056, 0, 0.221957, 0, 1, 0, -0.221957, 0, 0.975056, -8.97937, 2.13961, -34.7578)
+
+[node name="deer_female2" parent="animals/deers" instance=ExtResource("30_cj6hb")]
+transform = Transform3D(0.356135, 0, 0.934435, 0, 1, 0, -0.934435, 0, 0.356135, 5.95475, 2.13961, -35.0043)
+
+[node name="deer_female3" parent="animals/deers" instance=ExtResource("30_cj6hb")]
+transform = Transform3D(0.999566, 0.00180035, -0.0294018, 1.94025e-10, 0.998131, 0.0611182, 0.0294569, -0.0610917, 0.997697, 2.2905, 3.42245, -7.55056)
+
+[node name="deer_female4" parent="animals/deers" instance=ExtResource("30_cj6hb")]
+transform = Transform3D(0.560201, -0.000841496, -0.828356, -0.0231823, 0.999592, -0.0166932, 0.828032, 0.0285548, 0.559953, 4.03675, 2.51608, -66.8063)
+
+[node name="mountain_pumas" type="Node3D" parent="animals"]
+
+[node name="mountain_puma" parent="animals/mountain_pumas" instance=ExtResource("25_0wtin")]
+transform = Transform3D(-1.13164, 0, 0.399245, 0, 1.2, 0, -0.399245, 0, -1.13164, -77.3848, 2.84269, 48.1721)
+
+[node name="mountain_puma3" parent="animals/mountain_pumas" instance=ExtResource("25_0wtin")]
+transform = Transform3D(0.688551, 0.00273687, 0.407296, 2.32831e-10, 0.799982, -0.00537557, -0.407305, 0.0046267, 0.688535, -75.5267, 2.8315, 51.0449)
+
+[node name="mountain_puma4" parent="animals/mountain_pumas" instance=ExtResource("25_0wtin")]
+transform = Transform3D(0.126846, -0.0265783, -0.789432, -0.0084841, 0.799455, -0.028279, 0.789834, 0.0128559, 0.126478, -73.0113, 2.90687, 51.6104)
+
+[node name="mountain_puma2" parent="animals/mountain_pumas" instance=ExtResource("25_0wtin")]
+transform = Transform3D(-0.236203, 0.0174945, 1.17639, 0, 1.19987, -0.0178436, -1.17652, -0.00351224, -0.236177, -80.0708, 2.88231, 48.2465)
+
+[node name="bears" type="Node3D" parent="animals"]
+
+[node name="bear" parent="animals/bears" instance=ExtResource("31_q81ea")]
+transform = Transform3D(-0.863266, 0, -0.83353, 0, 1.2, 0, 0.83353, 0, -0.863266, 56.4125, 2.18502, 59.7258)
+
+[node name="bear3" parent="animals/bears" instance=ExtResource("31_q81ea")]
+transform = Transform3D(-0.593928, 0.00138044, 0.0851307, 1.16415e-10, 0.599921, -0.00972804, -0.0851419, -0.0096296, -0.59385, 49.7004, 2.31896, 56.2364)
+
+[node name="bear2" parent="animals/bears" instance=ExtResource("31_q81ea")]
+transform = Transform3D(-0.367913, 0, -0.92986, 0, 1, 0, 0.92986, 0, -0.367913, 49.9437, 2.46841, 61.0446)
+
+[node name="bisons" type="Node3D" parent="animals"]
+
+[node name="bison" parent="animals/bisons" instance=ExtResource("32_rqlhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6022, 2.15189, -0.476463)
+
+[node name="bison2" parent="animals/bisons" instance=ExtResource("32_rqlhw")]
+transform = Transform3D(0.94225, 0, -0.334909, 0, 1, 0, 0.334909, 0, 0.94225, 60.3624, 2.15189, -3.45879)
+
+[node name="bison3" parent="animals/bisons" instance=ExtResource("32_rqlhw")]
+transform = Transform3D(0.0223558, 0, -0.99975, 0, 1, 0, 0.99975, 0, 0.0223558, 74.1984, 2.15189, 1.45901)
+
+[node name="cows" type="Node3D" parent="animals"]
+
+[node name="cow" parent="animals/cows" instance=ExtResource("33_n7t61")]
+transform = Transform3D(-0.0208172, 0, -1.19982, 0, 1.2, 0, 1.19982, 0, -0.0208172, 62.7635, 2.53548, -39.1829)
+
+[node name="cow2" parent="animals/cows" instance=ExtResource("33_n7t61")]
+transform = Transform3D(0.247343, -0.12217, -1.16786, 0, 1.19349, -0.124851, 1.17423, 0.0257341, 0.246, 60.1174, 2.3536, -35.9239)
+
+[node name="cow3" parent="animals/cows" instance=ExtResource("33_n7t61")]
+transform = Transform3D(1.10095, 0.000473104, -0.477395, -0.00707331, 1.19988, -0.0151231, 0.477343, 0.0166888, 1.10085, 55.1726, 2.2173, -22.0777)
+
+[node name="foxes" type="Node3D" parent="animals"]
+
+[node name="fox" parent="animals/foxes" instance=ExtResource("34_cwcdq")]
+transform = Transform3D(0.401053, 0, -0.916055, 0, 1, 0, 0.916055, 0, 0.401053, 74.6976, 2.36823, 61.8659)
+
+[node name="fox2" parent="animals/foxes" instance=ExtResource("34_cwcdq")]
+transform = Transform3D(-0.50829, 0, -0.861186, 0, 1, 0, 0.861186, 0, -0.50829, 68.115, 2.10739, 67.3949)
+
+[node name="fox3" parent="animals/foxes" instance=ExtResource("34_cwcdq")]
+transform = Transform3D(-0.994729, 0.035477, 0.0962073, 0.0373216, 0.999151, 0.0174406, -0.0955069, 0.0209393, -0.995209, 32.8419, 3.66173, 92.5213)
+
+[node name="fox4" parent="animals/foxes" instance=ExtResource("34_cwcdq")]
+transform = Transform3D(0.325302, 0.0137326, 0.94551, 0.00826591, 0.999815, -0.0173652, -0.945574, 0.0134644, 0.325128, -29.5959, 2.48392, 66.4223)
+
+[node name="rabbits" type="Node3D" parent="animals"]
+
+[node name="rabbit" parent="animals/rabbits" instance=ExtResource("35_0x1a6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.0324, 2.92331, -33.5125)
+
+[node name="rabbit2" parent="animals/rabbits" instance=ExtResource("35_0x1a6")]
+transform = Transform3D(0.560335, 0.0499584, -0.826758, 3.72529e-09, 0.998179, 0.0603168, 0.828266, -0.0337977, 0.559315, -90.3025, 2.90019, -32.431)
+
+[node name="rabbit3" parent="animals/rabbits" instance=ExtResource("35_0x1a6")]
+transform = Transform3D(0.950418, 0, 0.310975, 0, 1, 0, -0.310975, 0, 0.950418, -88.2094, 2.81845, -34.3007)
+
+[node name="rabbit5" parent="animals/rabbits" instance=ExtResource("35_0x1a6")]
+transform = Transform3D(0.998453, 0, -0.055595, 0, 1, 0, 0.055595, 0, 0.998453, -92.7449, 3.36447, -25.3654)
+
+[node name="rabbit4" parent="animals/rabbits" instance=ExtResource("35_0x1a6")]
+transform = Transform3D(-0.343742, 0, 0.939064, 0, 1, 0, -0.939064, 0, -0.343742, -98.8937, 3.07773, -30.8048)
+
+[node name="sheeps" type="Node3D" parent="animals"]
+
+[node name="sheep" parent="animals/sheeps" instance=ExtResource("36_6cq4q")]
+transform = Transform3D(0.709989, 0, -0.704213, 0, 1, 0, 0.704213, 0, 0.709989, 25.0767, 2.9204, -33.4204)
+
+[node name="sheep6" parent="animals/sheeps" instance=ExtResource("36_6cq4q")]
+transform = Transform3D(0.6333, 0.00678054, 0.773877, -4.65661e-10, 0.999962, -0.00876144, -0.773907, 0.00554862, 0.633276, 22.352, 2.45575, -21.5952)
+
+[node name="sheep5" parent="animals/sheeps" instance=ExtResource("36_6cq4q")]
+transform = Transform3D(0.944877, 0.095258, 0.313263, -0.0971834, 0.995221, -0.00950162, -0.312671, -0.0214661, 0.949619, 20.6888, 3.1625, -1.48662)
+
+[node name="sheep4" parent="animals/sheeps" instance=ExtResource("36_6cq4q")]
+transform = Transform3D(-0.781379, 0, -0.624057, 0, 1, 0, 0.624057, 0, -0.781379, 9.91558, 2.05583, -26.2316)
+
+[node name="sheep2" parent="animals/sheeps" instance=ExtResource("36_6cq4q")]
+transform = Transform3D(0.992722, -0.00241285, -0.120407, 0, 0.999799, -0.020035, 0.120431, 0.0198892, 0.992522, 24.7407, 2.75375, -28.9228)
+
+[node name="sheep3" parent="animals/sheeps" instance=ExtResource("36_6cq4q")]
+transform = Transform3D(0.180555, 0.12999, 0.974937, -0.0131809, 0.991459, -0.129752, -0.983477, 0.0105769, 0.180726, 28.9767, 2.57377, -28.4141)
 
 [editable path="level_1_blockout"]
 [editable path="gojira"]
