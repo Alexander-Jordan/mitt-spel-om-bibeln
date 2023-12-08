@@ -11,11 +11,10 @@ func _process(delta):
 	pass
 
 
-func _on_rabbit_animal_is_idle():
-	set("parameters/conditions/idle", true)
-	set("parameters/conditions/is_moving", false)
-
-
-func _on_rabbit_animal_is_moving():
-	set("parameters/conditions/idle", false)
-	set("parameters/conditions/is_moving", true)
+func _on_state_handler_state_changed(state: String):
+	if (state == 'idle'):
+		set("parameters/conditions/idle", true)
+		set("parameters/conditions/is_moving", false)
+	if (state == 'moving'):
+		set("parameters/conditions/idle", false)
+		set("parameters/conditions/is_moving", true)
