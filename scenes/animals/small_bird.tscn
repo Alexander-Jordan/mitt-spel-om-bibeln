@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://7apxx13dhvow"]
+
+[ext_resource type="PackedScene" uid="uid://dm5ivgthpwwwt" path="res://assets/models/animals/small_bird/small_bird.glb" id="1_r1gt3"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_0af6r"]
+
+[node name="small_bird" instance=ExtResource("1_r1gt3")]
+
+[node name="small_bird2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0af6r")

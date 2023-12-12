@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpyuilaqkpgav"]
+
+[ext_resource type="PackedScene" uid="uid://d06j1dqvonk0n" path="res://assets/models/animals/hippo/hippo.glb" id="1_4fo6r"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_vqe47"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cd2x3"]
+size = Vector3(0.887, 1.2, 2.33685)
+
+[node name="hippo" instance=ExtResource("1_4fo6r")]
+
+[node name="hippo2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vqe47")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.221652)
+shape = SubResource("BoxShape3D_cd2x3")

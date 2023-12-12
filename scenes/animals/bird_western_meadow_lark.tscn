@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvm0116s6i0in"]
+
+[ext_resource type="PackedScene" uid="uid://bhruwgw7w7nvx" path="res://assets/models/animals/bird_western_meadow_lark/bird_western_meadow_lark.glb" id="1_8po6v"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_pe1yx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtufk"]
+size = Vector3(0.0689546, 0.15, 0.128806)
+
+[node name="bird_western_meadow_lark" instance=ExtResource("1_8po6v")]
+
+[node name="Westernmeadowlark" parent="WesternMeadowlark/Main/DeformationSystem/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_pe1yx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, -0.00296783)
+shape = SubResource("BoxShape3D_vtufk")

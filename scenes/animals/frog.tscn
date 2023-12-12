@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce2rdy7lvipeg"]
+
+[ext_resource type="PackedScene" uid="uid://bmsc3fds2q5pq" path="res://assets/models/animals/frog/frog.glb" id="1_qbowg"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_8kvp6"]
+
+[node name="frog" instance=ExtResource("1_qbowg")]
+
+[node name="frog2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8kvp6")

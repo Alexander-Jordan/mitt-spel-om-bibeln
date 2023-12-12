@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1qeer4x5kuvk"]
+
+[ext_resource type="PackedScene" uid="uid://djey4abkktwhb" path="res://assets/models/animals/duck/duck.glb" id="1_kovsh"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_sia3l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ut464"]
+size = Vector3(0.182354, 0.3, 0.282385)
+
+[node name="duck" instance=ExtResource("1_kovsh")]
+
+[node name="duck2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_sia3l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.00205618)
+shape = SubResource("BoxShape3D_ut464")

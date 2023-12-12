@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4eri1j8lw5nw"]
+
+[ext_resource type="PackedScene" uid="uid://dg675ddn1hjfc" path="res://assets/models/animals/hen/hen.glb" id="1_nrh87"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_atewv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oqw3g"]
+size = Vector3(0.144975, 0.3, 0.363)
+
+[node name="hen" instance=ExtResource("1_nrh87")]
+
+[node name="hen2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_atewv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.032)
+shape = SubResource("BoxShape3D_oqw3g")

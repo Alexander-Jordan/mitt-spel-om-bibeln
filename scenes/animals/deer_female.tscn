@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://n3m2ov55a10j"]
+
+[ext_resource type="PackedScene" uid="uid://yedcq1cor8vo" path="res://assets/models/animals/deer/deer_female.glb" id="1_j0vs0"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_c0grl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehxxw"]
+size = Vector3(0.36, 1.2, 1.173)
+
+[node name="deer_female" instance=ExtResource("1_j0vs0")]
+
+[node name="deer_female2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_c0grl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.068)
+shape = SubResource("BoxShape3D_ehxxw")

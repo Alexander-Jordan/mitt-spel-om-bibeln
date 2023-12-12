@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4yj6pycwdwda"]
+
+[ext_resource type="PackedScene" uid="uid://po7b7kqbm27q" path="res://assets/models/animals/cow/cow.glb" id="1_njebd"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_we61w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnqgf"]
+size = Vector3(0.506, 1.4, 1.811)
+
+[node name="cow" instance=ExtResource("1_njebd")]
+
+[node name="cow2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_we61w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0.005)
+shape = SubResource("BoxShape3D_fnqgf")

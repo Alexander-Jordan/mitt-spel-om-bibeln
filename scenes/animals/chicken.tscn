@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8p1u8l0qm8o"]
+
+[ext_resource type="PackedScene" uid="uid://sjewkja2t41l" path="res://assets/models/animals/chicken/chicken.glb" id="1_3f0vg"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_3y3uw"]
+
+[node name="chicken" instance=ExtResource("1_3f0vg")]
+
+[node name="chicken2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3y3uw")

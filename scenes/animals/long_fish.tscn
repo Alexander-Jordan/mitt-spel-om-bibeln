@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvnwrahs2t5lu"]
+
+[ext_resource type="PackedScene" uid="uid://73f8t45fhjxr" path="res://assets/models/animals/long_fish/long_fish.glb" id="1_p5uf6"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_1j208"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8g8sj"]
+size = Vector3(0.168712, 0.195966, 0.60196)
+
+[node name="long_fish" instance=ExtResource("1_p5uf6")]
+
+[node name="long_fish2" parent="Armature_002/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_1j208")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0422815)
+shape = SubResource("BoxShape3D_8g8sj")
