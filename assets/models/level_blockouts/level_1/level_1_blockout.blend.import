@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://duq4xt8ndpr6k"
-path="res://.godot/imported/level_1_blockout.blend-56ed6712a3700c80df573abcda9561fd.scn"
+path="res://.godot/imported/level_1_blockout.blend-e78147a3751809dfd25e7850413af32b.scn"
 
 [deps]
 
-source_file="res://assets/models/level_blockouts/level_1_blockout.blend"
-dest_files=["res://.godot/imported/level_1_blockout.blend-56ed6712a3700c80df573abcda9561fd.scn"]
+source_file="res://assets/models/level_blockouts/level_1/level_1_blockout.blend"
+dest_files=["res://.godot/imported/level_1_blockout.blend-e78147a3751809dfd25e7850413af32b.scn"]
 
 [params]
 
