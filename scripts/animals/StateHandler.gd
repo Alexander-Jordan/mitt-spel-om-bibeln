@@ -14,12 +14,15 @@ func _ready():
 	for child in get_children():
 		if child is Timer:
 			state_timer = child
+			break
 	
 	if state_timer == null:
 		assert(false, "Timer node is required as a child node")
 	
 	state_timer.timeout.connect(_on_state_timer_timeout)
-	set_state()
+	# for now, set state to idle manually at ready
+	self.state = states[0]
+	state_timer.start(rng.randf_range(1, 10))
 
 
 func _process(_delta):
@@ -34,4 +37,8 @@ func set_state():
 
 
 func _on_state_timer_timeout():
+	set_state()
+
+
+func _on_navigation_handler_target_reached():
 	set_state()
