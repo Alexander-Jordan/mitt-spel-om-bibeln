@@ -1,9 +1,9 @@
 extends CharacterBody3D
 class_name MovementComponent
 
-const movement_speed:float = 2.0
+@export var movement_speed: float = 2.0
 # get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var direction: Vector3 = Vector3.ZERO
 
 func _physics_process(delta):
