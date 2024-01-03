@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name MovementComponent
 
 @export var movement_speed: float = 2.0
+@export_range (-1.0, 1.0) var rotation_speed: float = 0.08
 # get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var target_position: Variant = null
@@ -24,8 +25,8 @@ func _physics_process(delta):
 		var n: Vector3 = raycast.get_collision_normal()
 		if n.length_squared() < 0.001:
 			n = Vector3(0, 1, 0)
-		velocity = (target_position - transform.origin).slide(n).normalized() * movement_speed
-		look_at(transform.origin + velocity, Vector3.UP, true)
+		transform = transform.interpolate_with(transform.looking_at(target_position, n, true), rotation_speed)
+		velocity = transform.basis.z.slide(n).normalized() * movement_speed
 	
 	move_and_slide()
 
