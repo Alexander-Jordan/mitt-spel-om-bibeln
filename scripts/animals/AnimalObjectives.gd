@@ -19,6 +19,12 @@ func _ready():
 	# add 5 objectives to the queue
 	for _i in 5:
 		add_random_objective()
+	
+	# run rest of setup after waiting for first physics frame
+	call_deferred("_setup_on_first_physics_frame")
+
+func _setup_on_first_physics_frame():
+	await get_tree().physics_frame
 	# execute the first objective in queue
 	objectives.next_in_queue()
 
