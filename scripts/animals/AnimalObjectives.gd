@@ -34,10 +34,10 @@ func _process(_delta):
 		add_random_objective()
 
 # setup and add objective to the queue
-func add_objective(objective: Objective):
+func add_objective(objective: Objective, front: bool = false):
 	if objective.try_to_set_required_components(get_children()):
 		objective.start_time.connect(_on_objective_start_time)
-		objectives.add_to_queue(objective)
+		objectives.add_to_queue(objective, front)
 
 # add a random objective from pickable objectives
 func add_random_objective():
