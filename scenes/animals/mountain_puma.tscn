@@ -4280,6 +4280,8 @@ _data = {
 
 [sub_resource type="Resource" id="Resource_r65ay"]
 script = ExtResource("5_q585n")
+min_time = 1
+max_time = 10
 
 [sub_resource type="Resource" id="Resource_8odl7"]
 script = ExtResource("6_qt7ij")

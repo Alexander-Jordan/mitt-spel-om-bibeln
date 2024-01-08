@@ -1,6 +1,9 @@
 extends Objective
 class_name IdleObjective
 
+@export var min_time: int = 1
+@export var max_time: int = 10
+
 var state_component: StateComponent
 var state: String = 'idle'
 
@@ -17,4 +20,4 @@ func try_to_set_required_components(nodes_to_search: Array[Node]) -> bool:
 # execute the objective
 func execute():
 	state_component.set_state(self.state)
-	start_random_time_from_range(1, 10)
+	start_random_time_from_range(min_time, max_time)

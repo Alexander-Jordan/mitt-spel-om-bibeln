@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bojqrfkq2p2cm"]
+[gd_scene load_steps=27 format=3 uid="uid://bojqrfkq2p2cm"]
 
 [ext_resource type="Script" path="res://scripts/animals/MovementComponent.gd" id="1_xuk25"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_tao1e"]
@@ -493,17 +493,18 @@ _data = {
 "jump": SubResource("Animation_240gy")
 }
 
-[sub_resource type="Resource" id="Resource_mdsiy"]
-script = ExtResource("8_lssnu")
+[sub_resource type="Resource" id="Resource_chp48"]
+script = ExtResource("7_5d11h")
+min_time = 20
+max_time = 30
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7dvav"]
 radius = 1.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_215cj"]
-radius = 5.0
-
 [sub_resource type="Resource" id="Resource_qjeab"]
 script = ExtResource("7_5d11h")
+min_time = 1
+max_time = 10
 
 [sub_resource type="Resource" id="Resource_0ocuw"]
 script = ExtResource("8_lssnu")
@@ -526,35 +527,35 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, -4.08078e-07, 4.2829e-06, 3.87642e-06, 0.517301, -0.855803, -1.86631e-06, 0.855803, 0.517301, -2.30926e-14, 0.173124, 2.60767e-08)
 bones/1/enabled = true
 bones/1/position = Vector3(-2.30926e-14, 0.173124, 2.60767e-08)
-bones/1/rotation = Quaternion(0.490133, -0.0318244, 0.0601887, 0.868984)
+bones/1/rotation = Quaternion(0.490489, -0.0256204, 0.0484511, 0.869722)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 3.72016e-06, 1.94589e-06, -3.72048e-06, 0.570487, 0.821307, 1.94529e-06, -0.821307, 0.570487, -5.86198e-14, 0.179835, 5.14523e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(-5.86198e-14, 0.179835, 5.14523e-08)
-bones/2/rotation = Quaternion(-0.341981, 0.0307339, 0.0287519, 0.938764)
+bones/2/rotation = Quaternion(-0.386959, 0.00863082, 0.0248947, 0.92172)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Bone.003"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, -4.39206e-06, 3.4208e-06, 4.39207e-06, 0.24485, -0.969561, 3.42079e-06, 0.969561, 0.24485, 0, 0.0878548, 2.60738e-08)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.0878548, 2.60738e-08)
-bones/3/rotation = Quaternion(0.479234, -0.0304116, -0.032154, 0.876571)
+bones/3/rotation = Quaternion(0.540007, -0.0251743, 0.0279179, 0.840821)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "ear01.L"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.931911, 0.362542, 0.0102171, 0.280209, -0.737589, 0.614365, 0.230269, -0.569672, -0.788955, 0.0313461, -0.0165188, -0.0453259)
 bones/4/enabled = true
 bones/4/position = Vector3(0.0313461, -0.0165188, -0.0453259)
-bones/4/rotation = Quaternion(0.883529, 0.295934, 0.0682128, -0.356575)
+bones/4/rotation = Quaternion(0.925974, 0.188475, 0.053606, -0.322762)
 bones/4/scale = Vector3(1, 1, 0.999999)
 bones/5/name = "ear02.L"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.997128, 0.0757243, -0.00114475, -0.0756813, 0.995777, -0.0519763, -0.00279595, 0.0519136, 0.998648, -1.86265e-09, 0.0464325, 6.40284e-09)
 bones/5/enabled = true
 bones/5/position = Vector3(-1.86265e-09, 0.0464325, 6.40284e-09)
-bones/5/rotation = Quaternion(0.0481168, -0.081338, -0.20108, 0.975006)
+bones/5/rotation = Quaternion(0.0257553, -0.0342256, -0.0442315, 0.998103)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "ear02.L_end"
 bones/6/parent = 5
@@ -568,14 +569,14 @@ bones/7/parent = 3
 bones/7/rest = Transform3D(0.931913, -0.362537, -0.0102093, -0.28021, -0.737589, 0.614365, -0.230261, -0.569675, -0.788955, -0.0313457, -0.0165188, -0.0453262)
 bones/7/enabled = true
 bones/7/position = Vector3(-0.0313457, -0.0165188, -0.0453262)
-bones/7/rotation = Quaternion(0.928084, -0.242536, -0.114854, -0.258155)
+bones/7/rotation = Quaternion(0.923187, -0.205936, -0.0761237, -0.315469)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "ear02.R"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.997128, -0.0757243, 0.00114454, 0.0756813, 0.995776, -0.0519753, 0.0027961, 0.0519127, 0.998648, -1.86265e-09, 0.0464324, -2.52039e-08)
 bones/8/enabled = true
 bones/8/position = Vector3(-1.86265e-09, 0.0464324, -2.52039e-08)
-bones/8/rotation = Quaternion(0.0426282, 0.0720876, 0.252998, 0.963835)
+bones/8/rotation = Quaternion(0.0145785, 0.0229217, 0.0478129, 0.998487)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "ear02.R_end"
 bones/9/parent = 8
@@ -589,21 +590,21 @@ bones/10/parent = 1
 bones/10/rest = Transform3D(0.996418, -0.0845646, 6.65337e-06, -0.0403336, -0.475316, -0.87889, 0.0743262, 0.875742, -0.477025, 0.0582959, 0.154371, 0.0511432)
 bones/10/enabled = true
 bones/10/position = Vector3(0.0582959, 0.154371, 0.0511432)
-bones/10/rotation = Quaternion(0.863627, -0.0174326, -0.0279037, 0.503057)
+bones/10/rotation = Quaternion(0.862069, -0.0263678, -0.00461151, 0.506084)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/name = "fleg02.L"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.998312, 0.039018, 0.0430237, -0.0550454, 0.871948, 0.486495, -0.0185324, -0.488042, 0.872623, -2.09548e-09, 0.0961954, 3.14343e-09)
 bones/11/enabled = true
 bones/11/position = Vector3(-2.09548e-09, 0.0961954, 3.14343e-09)
-bones/11/rotation = Quaternion(-0.243939, 0.00563806, -0.0367722, 0.969077)
+bones/11/rotation = Quaternion(-0.247572, 0.0103445, -0.0310641, 0.968316)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "fleg03.L"
 bones/12/parent = 11
 bones/12/rest = Transform3D(0.999266, 0.0277169, 0.0264263, -0.0356299, 0.419911, 0.906865, 0.0140388, -0.907142, 0.420591, -4.4347e-09, 0.0777894, 2.49565e-09)
 bones/12/enabled = true
 bones/12/position = Vector3(-4.4347e-09, 0.0777894, 2.49565e-09)
-bones/12/rotation = Quaternion(-0.525462, -0.0811209, -0.0664091, 0.844333)
+bones/12/rotation = Quaternion(-0.531993, -0.0413547, -0.0440902, 0.844588)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "fleg03.L_end"
 bones/13/parent = 12
@@ -617,21 +618,21 @@ bones/14/parent = 1
 bones/14/rest = Transform3D(0.996419, 0.0845568, -2.36556e-06, 0.0403335, -0.475316, -0.878891, -0.0743172, 0.875743, -0.477024, -0.0582964, 0.154371, 0.0511427)
 bones/14/enabled = true
 bones/14/position = Vector3(-0.0582964, 0.154371, 0.0511427)
-bones/14/rotation = Quaternion(0.822626, 0.13079, -0.0444328, 0.551549)
+bones/14/rotation = Quaternion(0.834752, 0.089038, -0.0339435, 0.542318)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "fleg02.R"
 bones/15/parent = 14
 bones/15/rest = Transform3D(0.998312, -0.0390181, -0.0430238, 0.0550455, 0.871948, 0.486495, 0.0185324, -0.488042, 0.872623, 1.16415e-09, 0.0961955, -1.50068e-09)
 bones/15/enabled = true
 bones/15/position = Vector3(1.16415e-09, 0.0961955, -1.50068e-09)
-bones/15/rotation = Quaternion(-0.397833, 0.0188237, 0.100401, 0.911753)
+bones/15/rotation = Quaternion(-0.329447, 0.0054317, 0.0660883, 0.941843)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/name = "fleg03.R"
 bones/16/parent = 15
 bones/16/rest = Transform3D(0.999266, -0.0277169, -0.0264259, 0.0356295, 0.419911, 0.906866, -0.014039, -0.907142, 0.42059, 1.16052e-09, 0.0777893, -2.13913e-09)
 bones/16/enabled = true
 bones/16/position = Vector3(1.16052e-09, 0.0777893, -2.13913e-09)
-bones/16/rotation = Quaternion(-0.302335, -0.0044103, 0.00822854, 0.953156)
+bones/16/rotation = Quaternion(-0.417137, -0.00852668, 0.0194009, 0.908597)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/name = "fleg03.R_end"
 bones/17/parent = 16
@@ -721,17 +722,12 @@ libraries = {
 
 [node name="SituationAwarenessComponent" type="Node3D" parent="."]
 script = ExtResource("4_idhxo")
-player_is_close_objective = SubResource("Resource_mdsiy")
+player_is_close_objective = SubResource("Resource_chp48")
 
 [node name="AreaClose" type="Area3D" parent="SituationAwarenessComponent"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SituationAwarenessComponent/AreaClose"]
 shape = SubResource("SphereShape3D_7dvav")
-
-[node name="AreaFar" type="Area3D" parent="SituationAwarenessComponent"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SituationAwarenessComponent/AreaFar"]
-shape = SubResource("SphereShape3D_215cj")
 
 [node name="AnimalObjectives" type="Node3D" parent="SituationAwarenessComponent"]
 script = ExtResource("6_trsrt")
