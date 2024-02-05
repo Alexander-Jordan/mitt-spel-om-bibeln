@@ -1655,7 +1655,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.454, 3.12871, 36.5234)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2311, 2.63503, 67.9742)
 
 [node name="player" parent="." instance=ExtResource("1_24w0d")]
-transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476, -118.732, 20.2614, -70.8477)
+transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476, 44.0261, 4.42884, 49.5862)
 
 [node name="animals" type="Node3D" parent="."]
 
@@ -1727,9 +1727,6 @@ transform = Transform3D(-0.236203, 0.0174945, 1.17639, 0, 1.19987, -0.0178436, -
 
 [node name="bear" parent="animals/bears" instance=ExtResource("31_q81ea")]
 transform = Transform3D(-0.863266, 0, -0.83353, 0, 1.2, 0, 0.83353, 0, -0.863266, 56.4125, 2.18502, 59.7258)
-
-[node name="bear3" parent="animals/bears" instance=ExtResource("31_q81ea")]
-transform = Transform3D(-0.593928, 0.00138044, 0.0851307, 1.16415e-10, 0.599921, -0.00972804, -0.0851419, -0.0096296, -0.59385, 49.7004, 2.31896, 56.2364)
 
 [node name="bear2" parent="animals/bears" instance=ExtResource("31_q81ea")]
 transform = Transform3D(-0.367913, 0, -0.92986, 0, 1, 0, 0.92986, 0, -0.367913, 49.9437, 2.46841, 61.0446)
