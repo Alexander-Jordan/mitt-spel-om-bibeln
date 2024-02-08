@@ -1655,7 +1655,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.454, 3.12871, 36.5234)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2311, 2.63503, 67.9742)
 
 [node name="player" parent="." instance=ExtResource("1_24w0d")]
-transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476, 44.0261, 4.42884, 49.5862)
+transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476, -117.829, 19.7013, -69.9708)
 
 [node name="animals" type="Node3D" parent="."]
 
