@@ -1662,13 +1662,10 @@ transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476
 [node name="elephants" type="Node3D" parent="animals"]
 
 [node name="elephant" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
-transform = Transform3D(1, 0, 0, 0, 0.998926, -0.0463393, 0, 0.0463393, 0.998926, -95.1674, 3.03418, -4.35932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.1674, 3.48665, -15.3883)
 
 [node name="elephant2" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
-transform = Transform3D(0.605176, -0.019065, -0.665881, -9.31323e-10, 0.899631, -0.0257575, 0.666154, 0.0173198, 0.604929, -88.8528, 2.83427, -2.32671)
-
-[node name="elephant3" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
-transform = Transform3D(0.387318, 0, -0.0999222, -0.00761029, 0.398838, -0.029499, 0.0996319, 0.0304649, 0.386193, -91.9329, 2.91529, -2.30161)
+transform = Transform3D(0.672418, -0.0211833, -0.739868, -1.0348e-09, 0.99959, -0.0286195, 0.740171, 0.0192443, 0.672143, -82.3116, 3.11493, -9.70441)
 
 [node name="giraffes" type="Node3D" parent="animals"]
 
@@ -1681,13 +1678,13 @@ transform = Transform3D(-1.41376, 0, -0.944075, 0, 1.7, 0, 0.944075, 0, -1.41376
 [node name="hippos" type="Node3D" parent="animals"]
 
 [node name="hippo" parent="animals/hippos" instance=ExtResource("28_igngs")]
-transform = Transform3D(-0.549484, 0, -1.39573, 0, 1.5, 0, 1.39573, 0, -0.549484, -44.9794, 2.23984, 35.2597)
+transform = Transform3D(-0.366323, 0, -0.930488, 0, 1, 0, 0.930488, 0, -0.366323, -44.9794, 2.23984, 35.2597)
 
 [node name="hippo3" parent="animals/hippos" instance=ExtResource("28_igngs")]
-transform = Transform3D(-0.800651, 0, 0.893845, 0, 1.2, 0, -0.893845, 0, -0.800651, -55.5935, 2.23984, 31.0811)
+transform = Transform3D(-0.667209, 0, 0.744871, 0, 1, 0, -0.744871, 0, -0.667209, -55.5935, 2.23984, 31.0811)
 
 [node name="hippo2" parent="animals/hippos" instance=ExtResource("28_igngs")]
-transform = Transform3D(-1.44653, -0.184127, -0.351641, -0.179079, 1.48866, -0.0428241, 0.354239, 0.000683408, -1.45757, -41.8447, 0.400462, 29.5788)
+transform = Transform3D(-0.958977, -0.132714, -0.250499, -0.167789, 0.977966, 0.124217, 0.228494, 0.161153, -0.960115, -20.5107, 2.83928, 24.3282)
 
 [node name="deers" type="Node3D" parent="animals"]
 
@@ -1745,13 +1742,13 @@ transform = Transform3D(0.0223558, 0, -0.99975, 0, 1, 0, 0.99975, 0, 0.0223558, 
 [node name="cows" type="Node3D" parent="animals"]
 
 [node name="cow" parent="animals/cows" instance=ExtResource("33_n7t61")]
-transform = Transform3D(-0.0208172, 0, -1.19982, 0, 1.2, 0, 1.19982, 0, -0.0208172, 62.7635, 2.53548, -39.1829)
+transform = Transform3D(-0.0173476, 0, -0.999849, 0, 1, 0, 0.999849, 0, -0.0173476, 62.7635, 2.53548, -39.1829)
 
 [node name="cow2" parent="animals/cows" instance=ExtResource("33_n7t61")]
-transform = Transform3D(0.247343, -0.12217, -1.16786, 0, 1.19349, -0.124851, 1.17423, 0.0257341, 0.246, 60.1174, 2.3536, -35.9239)
+transform = Transform3D(0.20612, -0.101808, -0.973216, 0, 0.994573, -0.104042, 0.978527, 0.0214451, 0.205001, 60.1174, 2.3536, -35.9239)
 
 [node name="cow3" parent="animals/cows" instance=ExtResource("33_n7t61")]
-transform = Transform3D(1.10095, 0.000473104, -0.477395, -0.00707331, 1.19988, -0.0151231, 0.477343, 0.0166888, 1.10085, 55.1726, 2.2173, -22.0777)
+transform = Transform3D(0.917459, 0.000394241, -0.39783, -0.00589443, 0.999903, -0.0126026, 0.397786, 0.0139074, 0.917373, 55.1726, 2.2173, -22.0777)
 
 [node name="foxes" type="Node3D" parent="animals"]
 
