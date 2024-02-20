@@ -35,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://8hgt1xu2uqvj" path="res://scenes/trees/tree_pomegranate_3.tscn" id="23_55aau"]
 [ext_resource type="PackedScene" uid="uid://x0drlek7boqf" path="res://assets/models/godzilla/gojira.glb" id="24_3b2o3"]
 [ext_resource type="PackedScene" uid="uid://c8aht1btej274" path="res://scenes/animals/mountain_puma.tscn" id="25_0wtin"]
-[ext_resource type="PackedScene" uid="uid://pyfp2c54twv8" path="res://scenes/animals/elephant.tscn" id="26_i2g3q"]
 [ext_resource type="PackedScene" uid="uid://daqfwg7jjmexg" path="res://scenes/animals/giraffe.tscn" id="27_kpcmi"]
 [ext_resource type="PackedScene" uid="uid://dpyuilaqkpgav" path="res://scenes/animals/hippo.tscn" id="28_igngs"]
 [ext_resource type="PackedScene" uid="uid://bncdtqbes2jb5" path="res://scenes/animals/deer_male.tscn" id="29_ss6vi"]
@@ -46,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xqqsj7e26uh" path="res://scenes/animals/fox.tscn" id="34_cwcdq"]
 [ext_resource type="PackedScene" uid="uid://bojqrfkq2p2cm" path="res://scenes/animals/rabbit.tscn" id="35_0x1a6"]
 [ext_resource type="PackedScene" uid="uid://bdi2ln45i6rvk" path="res://scenes/animals/sheep.tscn" id="36_6cq4q"]
+[ext_resource type="PackedScene" uid="uid://b1br12ltm7msd" path="res://scenes/animals/elephant_2.tscn" id="47_nms6j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
 sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
@@ -1661,11 +1661,11 @@ transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476
 
 [node name="elephants" type="Node3D" parent="animals"]
 
-[node name="elephant" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.1674, 3.48665, -15.3883)
+[node name="elephant_2" parent="animals/elephants" instance=ExtResource("47_nms6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.0088, 3.2754, -12.7371)
 
-[node name="elephant2" parent="animals/elephants" instance=ExtResource("26_i2g3q")]
-transform = Transform3D(0.672418, -0.0211833, -0.739868, -1.0348e-09, 0.99959, -0.0286195, 0.740171, 0.0192443, 0.672143, -82.3116, 3.11493, -9.70441)
+[node name="elephant_3" parent="animals/elephants" instance=ExtResource("47_nms6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5422, 3.39954, -18.1077)
 
 [node name="giraffes" type="Node3D" parent="animals"]
 
