@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://bncdtqbes2jb5" path="res://scenes/animals/deer_male.tscn" id="29_ss6vi"]
 [ext_resource type="PackedScene" uid="uid://n3m2ov55a10j" path="res://scenes/animals/deer_female.tscn" id="30_cj6hb"]
 [ext_resource type="PackedScene" uid="uid://cs2npd8q8sl7d" path="res://scenes/animals/bear.tscn" id="31_q81ea"]
-[ext_resource type="PackedScene" uid="uid://b1l3b4xe7vnim" path="res://scenes/animals/bison.tscn" id="32_rqlhw"]
+[ext_resource type="PackedScene" uid="uid://tknbsr167tjd" path="res://scenes/animals/bison.tscn" id="32_rqlhw"]
 [ext_resource type="PackedScene" uid="uid://b2xqqsj7e26uh" path="res://scenes/animals/fox.tscn" id="34_cwcdq"]
 [ext_resource type="PackedScene" uid="uid://bojqrfkq2p2cm" path="res://scenes/animals/rabbit.tscn" id="35_0x1a6"]
 [ext_resource type="PackedScene" uid="uid://b1br12ltm7msd" path="res://scenes/animals/elephant_2.tscn" id="47_nms6j"]
@@ -1708,13 +1708,13 @@ transform = Transform3D(-0.367913, 0, -0.92986, 0, 1, 0, 0.92986, 0, -0.367913, 
 [node name="bisons" type="Node3D" parent="animals"]
 
 [node name="bison" parent="animals/bisons" instance=ExtResource("32_rqlhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6022, 2.15189, -0.476463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.7018, 2.1773, 0)
 
 [node name="bison2" parent="animals/bisons" instance=ExtResource("32_rqlhw")]
-transform = Transform3D(0.94225, 0, -0.334909, 0, 1, 0, 0.334909, 0, 0.94225, 60.3624, 2.15189, -3.45879)
+transform = Transform3D(0.442868, 0, -0.896587, 0, 1, 0, 0.896587, 0, 0.442868, 70.7018, 2.36958, -11.2671)
 
 [node name="bison3" parent="animals/bisons" instance=ExtResource("32_rqlhw")]
-transform = Transform3D(0.0223558, 0, -0.99975, 0, 1, 0, 0.99975, 0, 0.0223558, 74.1984, 2.15189, 1.45901)
+transform = Transform3D(-0.473427, 0, 0.880833, 0, 1, 0, -0.880833, 0, -0.473427, 77.1707, 2.1773, 0)
 
 [node name="foxes" type="Node3D" parent="animals"]
 
