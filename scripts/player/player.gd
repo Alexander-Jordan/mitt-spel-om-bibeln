@@ -18,16 +18,7 @@ func _ready():
 	# hide & lock the mouse cursor, but still capture mouse movement
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
-func _input(event):
-	# set mouse mode to CAPTURED when clicking inside the viewport
-	if event is InputEventMouseButton && Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	# set mouse mode to VISIBLE when escaping the game
-	if event.is_action_pressed("ui_cancel") && Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+func _input(event):	
 	# rotate player in x axis & the head in y axis according to the mouse movement
 	# but only when mouse mode is set to CAPTURED
 	if event is InputEventMouseMotion && Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -63,3 +54,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, movement_speed_current)
 
 	move_and_slide()
+
+
+func _on_game_state_component_paused_changed(paused):
+	pass # Replace with function body.
