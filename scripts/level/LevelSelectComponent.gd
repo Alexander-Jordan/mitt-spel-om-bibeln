@@ -1,6 +1,7 @@
 extends Node
 class_name LevelSelectComponent
 
+@export var button_pressed_audio_stream_player:AudioStreamPlayer
 @export var levels:Array[Level]
 var current_level:Level
 
@@ -38,10 +39,16 @@ func previous_level():
 	level_changed()
 
 func _on_previous_button_pressed():
+	if button_pressed_audio_stream_player:
+		button_pressed_audio_stream_player.play(0.2)
 	previous_level()
 
 func _on_next_button_pressed():
+	if button_pressed_audio_stream_player:
+		button_pressed_audio_stream_player.play(0.2)
 	next_level()
 
 func _on_load_level_button_pressed():
+	if button_pressed_audio_stream_player:
+		button_pressed_audio_stream_player.play(0.2)
 	load_scene_from_level.emit(current_level)
