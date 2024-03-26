@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=21 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
@@ -7,6 +7,13 @@
 [ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="3_8qya4"]
 [ext_resource type="Texture2D" uid="uid://3mxvjjlhp3du" path="res://assets/icons/cross.svg" id="4_11fsp"]
 [ext_resource type="Texture2D" uid="uid://cckgqmo8nmtkm" path="res://assets/icons/arrow.png" id="5_eifie"]
+[ext_resource type="Script" path="res://scripts/level/LevelSelectComponent.gd" id="6_2okh0"]
+[ext_resource type="Texture2D" uid="uid://dfias6i6o17hi" path="res://assets/images/level_1.png" id="7_168nd"]
+[ext_resource type="PackedScene" uid="uid://5rrobgnot4xj" path="res://scenes/levels/level_1.tscn" id="8_7doua"]
+[ext_resource type="Script" path="res://scripts/level/Level.gd" id="8_wfrql"]
+[ext_resource type="Texture2D" uid="uid://cbqfchwi4mj6g" path="res://assets/icons/mitt-spel-om-bibeln-3.png" id="9_p2ci6"]
+[ext_resource type="Texture2D" uid="uid://ddnoegl2irev8" path="res://assets/images/test_level.png" id="10_7kie3"]
+[ext_resource type="PackedScene" uid="uid://chrem6k6tvykr" path="res://scenes/levels/test_level.tscn" id="11_qs7r8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr1cl"]
 sky_top_color = Color(0.643137, 0.65098, 0.768627, 1)
@@ -30,6 +37,20 @@ volumetric_fog_sky_affect = 0.5
 [sub_resource type="Theme" id="Theme_cw3cf"]
 default_font = ExtResource("1_hdq7i")
 default_font_size = 30
+
+[sub_resource type="Resource" id="Resource_aux6x"]
+script = ExtResource("8_wfrql")
+name = "Edens Trädgård"
+description = "Den ursprungliga trädgården, människans första hem här på jorden. Vandra omkring bland alla fruktträd och djur, och ta in det vrålande vattenfallet."
+image = ExtResource("7_168nd")
+scene = ExtResource("8_7doua")
+
+[sub_resource type="Resource" id="Resource_san63"]
+script = ExtResource("8_wfrql")
+name = "Testbana"
+description = "Det här är en simpeltestbana som användes under tiden som spelet utvecklades."
+image = ExtResource("10_7kie3")
+scene = ExtResource("11_qs7r8")
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -217,6 +238,8 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 50
+script = ExtResource("6_2okh0")
+levels = Array[ExtResource("8_wfrql")]([SubResource("Resource_aux6x"), SubResource("Resource_san63")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
 layout_mode = 2
@@ -241,14 +264,45 @@ expand_icon = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="NextButton2" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+[node name="PreviousButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 texture_normal = ExtResource("5_eifie")
 ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelName" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelImage" type="TextureRect" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("9_p2ci6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LevelDescription" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "This is a description"
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
@@ -270,6 +324,9 @@ text = "Ladda bana"
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer/BackButton" to="MenuUI" method="_on_level_select_back_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/PreviousButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/NextButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_next_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI" method="_on_level_select_load_level_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_load_level_button_pressed"]
 
 [editable path="Background/sovrum"]

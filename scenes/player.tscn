@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3ar8v4m2f6cd"]
+[gd_scene load_steps=6 format=3 uid="uid://d3ar8v4m2f6cd"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_rxa7e"]
 [ext_resource type="Script" path="res://scripts/menu/GameStateComponent.gd" id="2_2unbx"]
+[ext_resource type="Script" path="res://scripts/debug/ScreenshotComponent.gd" id="2_ahgv0"]
 [ext_resource type="PackedScene" uid="uid://bl0kv8fnabcw" path="res://scenes/levels/pause_menu.tscn" id="2_cjdfr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h7wt4"]
@@ -18,6 +19,7 @@ shape = SubResource("CapsuleShape3D_h7wt4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
+script = ExtResource("2_ahgv0")
 
 [node name="GameStateComponent" type="Node" parent="."]
 script = ExtResource("2_2unbx")
