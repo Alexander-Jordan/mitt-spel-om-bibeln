@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=22 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cbqfchwi4mj6g" path="res://assets/icons/mitt-spel-om-bibeln-3.png" id="9_p2ci6"]
 [ext_resource type="Texture2D" uid="uid://ddnoegl2irev8" path="res://assets/images/test_level.png" id="10_7kie3"]
 [ext_resource type="PackedScene" uid="uid://chrem6k6tvykr" path="res://scenes/levels/test_level.tscn" id="11_qs7r8"]
+[ext_resource type="Script" path="res://scripts/level/LevelLoadComponent.gd" id="15_42nej"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr1cl"]
 sky_top_color = Color(0.643137, 0.65098, 0.768627, 1)
@@ -320,13 +321,16 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 text = "Ladda bana"
 
+[node name="LevelLoadComponent" type="Node" parent="."]
+script = ExtResource("15_42nej")
+
 [connection signal="menu_changed" from="MenuUI" to="Background/SubViewportContainer/SubViewport/CameraManager" method="_on_menu_ui_menu_changed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
+[connection signal="load_scene_from_level" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect" to="LevelLoadComponent" method="_on_level_select_load_scene_from_level"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer/BackButton" to="MenuUI" method="_on_level_select_back_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/PreviousButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_previous_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/NextButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_next_button_pressed"]
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI" method="_on_level_select_load_level_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_load_level_button_pressed"]
 
 [editable path="Background/sovrum"]

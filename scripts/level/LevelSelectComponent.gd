@@ -8,6 +8,8 @@ var current_level:Level
 @onready var image_texture_rect:TextureRect = $HBoxContainer2/VBoxContainer/HBoxContainer/LevelImage
 @onready var description_label:Label = $HBoxContainer2/VBoxContainer/HBoxContainer/LevelDescription
 
+signal load_scene_from_level(level:Level)
+
 func _ready():
 	if levels.is_empty():
 		return
@@ -42,4 +44,4 @@ func _on_next_button_pressed():
 	next_level()
 
 func _on_load_level_button_pressed():
-	pass # Replace with function body.
+	load_scene_from_level.emit(current_level)
