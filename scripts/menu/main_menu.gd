@@ -12,7 +12,7 @@ func _ready():
 
 func _on_start_button_pressed():
 	if button_pressed_audio_stream_player:
-		button_pressed_audio_stream_player.play()
+		button_pressed_audio_stream_player.play(0.2)
 	main_ui_container.visible = false
 	level_select_ui_container.visible = true
 	menu_changed.emit('level')
