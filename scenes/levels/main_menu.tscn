@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=24 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://ddnoegl2irev8" path="res://assets/images/test_level.png" id="10_7kie3"]
 [ext_resource type="PackedScene" uid="uid://chrem6k6tvykr" path="res://scenes/levels/test_level.tscn" id="11_qs7r8"]
 [ext_resource type="Script" path="res://scripts/level/LevelLoadComponent.gd" id="15_42nej"]
+[ext_resource type="AudioStream" uid="uid://c6drx61n7tg21" path="res://assets/audio/8-bit-game-158815.mp3" id="16_f52c8"]
+[ext_resource type="AudioStream" uid="uid://m1k0ey4fs7ve" path="res://assets/audio/button-click.mp3" id="17_bdmej"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qr1cl"]
 sky_top_color = Color(0.643137, 0.65098, 0.768627, 1)
@@ -179,7 +181,7 @@ transform = Transform3D(0.838965, 0.190542, -0.509736, 1.36786e-08, 0.936697, 0.
 [node name="LevelsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
 transform = Transform3D(0.933916, 0.34795, -0.0820478, 0.00214303, 0.224056, 0.974574, 0.357486, -0.910346, 0.208504, 0.653782, 0.694648, 0.909354)
 
-[node name="MenuUI" type="Control" parent="."]
+[node name="MenuUI" type="Control" parent="." node_paths=PackedStringArray("button_pressed_audio_stream_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,6 +190,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cw3cf")
 script = ExtResource("3_8qya4")
+button_pressed_audio_stream_player = NodePath("../ButtonClickAudioStreamPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuUI"]
 layout_mode = 1
@@ -234,12 +237,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Avsluta"
 
-[node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer" node_paths=PackedStringArray("button_pressed_audio_stream_player")]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 50
 script = ExtResource("6_2okh0")
+button_pressed_audio_stream_player = NodePath("../../../../ButtonClickAudioStreamPlayer")
 levels = Array[ExtResource("8_wfrql")]([SubResource("Resource_aux6x"), SubResource("Resource_san63")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
@@ -323,6 +327,14 @@ text = "Ladda bana"
 
 [node name="LevelLoadComponent" type="Node" parent="."]
 script = ExtResource("15_42nej")
+
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_f52c8")
+volume_db = -10.0
+autoplay = true
+
+[node name="ButtonClickAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_bdmej")
 
 [connection signal="menu_changed" from="MenuUI" to="Background/SubViewportContainer/SubViewport/CameraManager" method="_on_menu_ui_menu_changed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
