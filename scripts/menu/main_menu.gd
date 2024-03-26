@@ -23,7 +23,3 @@ func _on_level_select_back_button_pressed():
 	level_select_ui_container.visible = false
 	main_ui_container.visible = true
 	menu_changed.emit('main')
-
-
-func _on_level_select_load_level_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")

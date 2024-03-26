@@ -12,6 +12,8 @@ config_version=5
 
 config/name="Mitt spel om Bibeln"
 run/main_scene="res://scenes/levels/main_menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="mitt_spel_om_bibeln"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/bg_color=Color(0.231373, 0.258824, 0.321569, 1)
 boot_splash/image="res://assets/icons/mitt-spel-om-bibeln-3.png"
@@ -65,6 +67,11 @@ jump={
 sprint={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+screenshot={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194343,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 
