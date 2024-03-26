@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=22 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
@@ -9,11 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cckgqmo8nmtkm" path="res://assets/icons/arrow.png" id="5_eifie"]
 [ext_resource type="Script" path="res://scripts/level/LevelSelectComponent.gd" id="6_2okh0"]
 [ext_resource type="Texture2D" uid="uid://dfias6i6o17hi" path="res://assets/images/level_1.png" id="7_168nd"]
-[ext_resource type="PackedScene" uid="uid://5rrobgnot4xj" path="res://scenes/levels/level_1.tscn" id="8_7doua"]
 [ext_resource type="Script" path="res://scripts/level/Level.gd" id="8_wfrql"]
 [ext_resource type="Texture2D" uid="uid://cbqfchwi4mj6g" path="res://assets/icons/mitt-spel-om-bibeln-3.png" id="9_p2ci6"]
 [ext_resource type="Texture2D" uid="uid://ddnoegl2irev8" path="res://assets/images/test_level.png" id="10_7kie3"]
-[ext_resource type="PackedScene" uid="uid://chrem6k6tvykr" path="res://scenes/levels/test_level.tscn" id="11_qs7r8"]
 [ext_resource type="Script" path="res://scripts/level/LevelLoadComponent.gd" id="15_42nej"]
 [ext_resource type="AudioStream" uid="uid://c6drx61n7tg21" path="res://assets/audio/8-bit-game-158815.mp3" id="16_f52c8"]
 [ext_resource type="AudioStream" uid="uid://m1k0ey4fs7ve" path="res://assets/audio/button-click.mp3" id="17_bdmej"]
@@ -46,14 +44,14 @@ script = ExtResource("8_wfrql")
 name = "Edens Trädgård"
 description = "Den ursprungliga trädgården, människans första hem här på jorden. Vandra omkring bland alla fruktträd och djur, och ta in det vrålande vattenfallet."
 image = ExtResource("7_168nd")
-scene = ExtResource("8_7doua")
+path = "res://scenes/levels/level_1.tscn"
 
 [sub_resource type="Resource" id="Resource_san63"]
 script = ExtResource("8_wfrql")
 name = "Testbana"
-description = "Det här är en simpeltestbana som användes under tiden som spelet utvecklades."
+description = "Det här är en simpel testbana som användes under tiden som spelet utvecklades."
 image = ExtResource("10_7kie3")
-scene = ExtResource("11_qs7r8")
+path = "res://scenes/levels/test_level.tscn"
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -307,7 +305,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "This is a description"
 vertical_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 
 [node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
