@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://5rrobgnot4xj"]
+[gd_scene load_steps=59 format=3 uid="uid://5rrobgnot4xj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="1_24w0d"]
 [ext_resource type="PackedScene" uid="uid://bjyu2g4v4lxkd" path="res://assets/models/level_blockouts/level_1/level_1_ground.glb" id="1_pyi77"]
@@ -41,7 +41,13 @@
 [ext_resource type="PackedScene" uid="uid://tknbsr167tjd" path="res://scenes/animals/bison.tscn" id="32_rqlhw"]
 [ext_resource type="PackedScene" uid="uid://b2xqqsj7e26uh" path="res://scenes/animals/fox.tscn" id="34_cwcdq"]
 [ext_resource type="PackedScene" uid="uid://bojqrfkq2p2cm" path="res://scenes/animals/rabbit.tscn" id="35_0x1a6"]
+[ext_resource type="AudioStream" uid="uid://gws5lq0abo3x" path="res://assets/audio/night-ambience-17064.mp3" id="43_5ckl7"]
+[ext_resource type="AudioStream" uid="uid://mrgv8m74bnpr" path="res://assets/audio/forest-with-small-river-birds-and-nature-field-recording-6735.mp3" id="44_y5sr8"]
+[ext_resource type="AudioStream" uid="uid://dcnefa5ke73s3" path="res://assets/audio/waterfall-close.wav" id="45_qj3wm"]
+[ext_resource type="AudioStream" uid="uid://gpw3smgkkgge" path="res://assets/audio/waterfall-distance.wav" id="46_cimxd"]
+[ext_resource type="AudioStream" uid="uid://blqmdcv8l1wbw" path="res://assets/audio/waterfall-rumble.wav" id="47_8twwn"]
 [ext_resource type="PackedScene" uid="uid://b1br12ltm7msd" path="res://scenes/animals/elephant_2.tscn" id="47_nms6j"]
+[ext_resource type="AudioStream" uid="uid://dtavptj6oixrh" path="res://assets/audio/river.wav" id="48_5juxr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
 sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
@@ -2012,6 +2018,131 @@ autoplay = "new_animation"
 libraries = {
 "": SubResource("AnimationLibrary_swte7")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_5ckl7")
+volume_db = -10.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_y5sr8")
+volume_db = -10.0
+autoplay = true
+
+[node name="audio_waterfall" type="Node3D" parent="."]
+
+[node name="waterfall_close" type="AudioStreamPlayer3D" parent="audio_waterfall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 110.93)
+stream = ExtResource("45_qj3wm")
+autoplay = true
+
+[node name="waterfall_distance" type="AudioStreamPlayer3D" parent="audio_waterfall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.1984, 111.042)
+stream = ExtResource("46_cimxd")
+autoplay = true
+
+[node name="waterfall_rumble" type="AudioStreamPlayer3D" parent="audio_waterfall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5033, 120.535)
+stream = ExtResource("47_8twwn")
+autoplay = true
+
+[node name="audio_river" type="Node3D" parent="."]
+
+[node name="river" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 118.488)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river16" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.87)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river2" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2312, 0, 31.568)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river4" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7354, 0, 16.9753)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river10" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.857, 0, -0.477356)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river13" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.348, 0, -6.41841)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river5" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8484, 0, -3.14035)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river11" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0084, 0, -51.8134)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river12" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0084, 0, -95.0094)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river3" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9376, 0, 36.4917)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river6" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4254, 0, 6.26639)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river9" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7321, 0, -58.8186)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river14" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.651, 0, -105.606)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river7" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.1951, 0, 25.3792)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river8" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.602, 0, 9.06694)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
+
+[node name="river15" type="AudioStreamPlayer3D" parent="audio_river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.074, 0, -6.62209)
+stream = ExtResource("48_5juxr")
+autoplay = true
+max_distance = 50.0
 
 [editable path="environment/blockout/level_1_ground"]
 [editable path="environment/blockout/level_1_entreance_rock_1"]
