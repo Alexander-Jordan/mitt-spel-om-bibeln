@@ -29,6 +29,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Mitt spel om Bibeln"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/floatable_body/plugin.cfg")
+
 [filesystem]
 
 import/fbx/enabled=false

@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://chrem6k6tvykr"]
+[gd_scene load_steps=12 format=3 uid="uid://chrem6k6tvykr"]
 
 [ext_resource type="Texture2D" uid="uid://cnlh0pshqvw0a" path="res://assets/textures/test_level/templategrid_albedo.png" id="1_33xv5"]
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="2_tx0s1"]
+[ext_resource type="Script" path="res://addons/floatable_body/fluid_area_3d.gd" id="3_h0v03"]
+[ext_resource type="Shader" uid="uid://4bkrirefulsf" path="res://assets/shaders/water.tres" id="4_5w4io"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lnxq7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,6 +21,17 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbd5e"]
 albedo_texture = ExtResource("1_33xv5")
 uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b6w2f"]
+size = Vector3(10, 2, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkm5g"]
+render_priority = 0
+shader = ExtResource("4_5w4io")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6n6s7"]
+material = SubResource("ShaderMaterial_jkm5g")
+size = Vector3(10, 2, 10)
 
 [node name="test_level" type="Node3D"]
 
@@ -49,3 +62,13 @@ size = Vector3(1, 2, 1)
 material = SubResource("StandardMaterial3D_bbd5e")
 
 [node name="player" parent="." instance=ExtResource("2_tx0s1")]
+
+[node name="FluidArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -10)
+script = ExtResource("3_h0v03")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FluidArea3D"]
+shape = SubResource("BoxShape3D_b6w2f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FluidArea3D"]
+mesh = SubResource("BoxMesh_6n6s7")
