@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3ar8v4m2f6cd"]
+[gd_scene load_steps=10 format=3 uid="uid://d3ar8v4m2f6cd"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_rxa7e"]
 [ext_resource type="Script" path="res://scripts/menu/GameStateComponent.gd" id="2_2unbx"]
 [ext_resource type="Script" path="res://scripts/debug/ScreenshotComponent.gd" id="2_ahgv0"]
 [ext_resource type="PackedScene" uid="uid://bl0kv8fnabcw" path="res://scenes/levels/pause_menu.tscn" id="2_cjdfr"]
+[ext_resource type="Script" path="res://scripts/player/SightInteractorComponent.gd" id="3_3503d"]
+[ext_resource type="PackedScene" uid="uid://dmmkvr8x3sebg" path="res://scenes/player_ui.tscn" id="5_v5yqy"]
+[ext_resource type="AudioStream" uid="uid://d1hs0w458phrw" path="res://assets/audio/mixkit-human-whistle-605.wav" id="6_4m41k"]
+[ext_resource type="Script" path="res://scripts/player/AudioPlayerComponent.gd" id="6_agwr8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h7wt4"]
 height = 1.5
@@ -21,7 +25,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 [node name="Camera3D" type="Camera3D" parent="head"]
 script = ExtResource("2_ahgv0")
 
+[node name="SightInteractorComponent" type="RayCast3D" parent="head"]
+target_position = Vector3(0, 0, -20)
+script = ExtResource("3_3503d")
+
 [node name="GameStateComponent" type="Node" parent="."]
 script = ExtResource("2_2unbx")
 
+[node name="Control" parent="GameStateComponent" instance=ExtResource("5_v5yqy")]
+
 [node name="PauseMenu" parent="GameStateComponent" instance=ExtResource("2_cjdfr")]
+
+[node name="AudioPlayerComponent" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4m41k")
+script = ExtResource("6_agwr8")
+
+[connection signal="interact_changed" from="head/SightInteractorComponent" to="GameStateComponent/Control" method="_on_sight_interactor_component_interact_changed"]
+[connection signal="play_audio" from="head/SightInteractorComponent" to="AudioPlayerComponent" method="_on_sight_interactor_component_play_audio"]

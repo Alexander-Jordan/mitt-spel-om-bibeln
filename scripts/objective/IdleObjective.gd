@@ -20,4 +20,4 @@ func try_to_set_required_components(nodes_to_search: Array[Node]) -> bool:
 # execute the objective
 func execute():
 	state_component.set_state(self.state)
-	start_random_time_from_range(min_time, max_time)
+	start_random_time_from_range(self.min_time, self.max_time)
