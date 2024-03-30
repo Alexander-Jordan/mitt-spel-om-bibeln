@@ -27,12 +27,18 @@ sky_material = SubResource("ProceduralSkyMaterial_qr1cl")
 [sub_resource type="Environment" id="Environment_2fe4c"]
 background_mode = 2
 sky = SubResource("Sky_bjyto")
+ambient_light_color = Color(0.0235294, 0.262745, 0.560784, 1)
+ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
+glow_enabled = true
+glow_bloom = 0.2
 fog_light_energy = 0.7
 fog_sun_scatter = 1.0
 fog_sky_affect = 0.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.5
+volumetric_fog_albedo = Color(1, 0, 1, 1)
+volumetric_fog_emission = Color(0, 0, 0.188235, 1)
 volumetric_fog_sky_affect = 0.5
 
 [sub_resource type="Theme" id="Theme_cw3cf"]
