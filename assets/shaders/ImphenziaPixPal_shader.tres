@@ -57,7 +57,7 @@ function = 31
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_toon;
 
 uniform sampler2D tex_frg_3;
 uniform sampler2D tex_frg_2;
@@ -137,6 +137,8 @@ void fragment() {
 
 }
 "
+modes/diffuse = 3
+modes/specular = 1
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_4pg85")
 nodes/fragment/2/position = Vector2(-60, -40)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_a7hcc")
