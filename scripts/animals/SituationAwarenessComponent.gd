@@ -42,9 +42,17 @@ func player_exited_close():
 		animal_objectives.objectives.next_in_queue()
 
 func listen_to_call(caller_position:Vector3):
+	# objective to go to the caller
 	var move_to_caller_objective:Objective = MoveObjective.new()
-	move_to_caller_objective.min_time = 0
-	move_to_caller_objective.max_time = 0
+	move_to_caller_objective.min_time = 60
+	move_to_caller_objective.max_time = 120
 	move_to_caller_objective.target = caller_position
+	# objective to stay at the place when reached
+	var stay_in_place_objective:Objective = IdleObjective.new()
+	stay_in_place_objective.min_time = 60
+	stay_in_place_objective.max_time = 120
+	# add both objectives, with the first to be executed last
+	animal_objectives.add_objective(stay_in_place_objective, true)
 	animal_objectives.add_objective(move_to_caller_objective, true)
+	# execute next objective in queue
 	animal_objectives.objectives.next_in_queue()
