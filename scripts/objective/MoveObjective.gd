@@ -3,11 +3,11 @@ class_name MoveObjective
 
 @export var min_time: int = 1
 @export var max_time: int = 10
+@export var target:Vector3 = Vector3.ZERO
 
 var state_component: StateComponent
 var navigation_component: NavigationComponent
 var state: String = 'moving'
-var target:Variant = null
 
 # search for the required components using the list of nodes provided
 # if all required components are found: set them and return true
@@ -23,7 +23,7 @@ func try_to_set_required_components(nodes_to_search: Array[Node]) -> bool:
 
 # execute the objective
 func execute():
-	if target == null:
+	if target == Vector3.ZERO:
 		navigation_component.set_random_target()
 	else:
 		navigation_component.set_target(target)

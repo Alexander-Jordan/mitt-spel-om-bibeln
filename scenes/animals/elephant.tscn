@@ -89,6 +89,7 @@ max_time = 10
 script = ExtResource("7_03l17")
 min_time = 1
 max_time = 10
+target = Vector3(0, 0, 0)
 
 [node name="elephant" type="CharacterBody3D"]
 script = ExtResource("1_jntys")
