@@ -20,7 +20,7 @@ func _physics_process(delta):
 				break
 		# no responder found, skip next time the ray collides with this object
 		if initiator.responder == null:
-			add_exception(get_collider())
+			add_exception_rid(get_collider_rid())
 	# transition from collision with an responder
 	elif initiator.responder != null:
 		# reset responder and emit
