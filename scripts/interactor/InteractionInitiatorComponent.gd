@@ -9,40 +9,16 @@ signal interaction_changed(interaction:Interaction)
 
 func _process(delta):
 	if responder != null:
-		var current_interaction = responder.one_interaction()
-		if current_interaction == null:
-			if interaction != null:
-				interaction = null
-				interaction_changed.emit(interaction)
-			return
-		
-		if interaction != current_interaction:
+		var current_interaction = responder.input_listener(self)
+		if current_interaction != interaction:
 			interaction = current_interaction
 			interaction_changed.emit(interaction)
-		interaction.input_listener(self)
-	elif interaction != null:
-		interaction = null
-		interaction_changed.emit(interaction)
 
 func set_responder(new_responder:InteractionResponderComponent):
-	# drop old responder
-	drop_responder_connection(self.responder)
-	# establish connection and set new responder
-	responder = establish_responder_connection(new_responder)
-
-func drop_responder_connection(responder:InteractionResponderComponent):
+	responder = new_responder
 	if responder == null:
-		return
-	
-	responder.initiator = null
-
-func establish_responder_connection(responder:InteractionResponderComponent) -> InteractionResponderComponent:
-	if responder == null:
-		return null
-	
-	responder.initiator = self
-	
-	return responder
+		interaction = null
+		interaction_changed.emit(interaction)
 
 func _play_audio(audio:AudioStream):
 	play_audio.emit(audio)
