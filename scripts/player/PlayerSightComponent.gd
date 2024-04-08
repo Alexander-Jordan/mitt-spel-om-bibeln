@@ -5,6 +5,9 @@ class_name PlayerSightComponent
 var detected_object:Object = null : set = set_detected_object
 func set_detected_object(object:Object):
 	if object != detected_object:
+		# reset every detected component to null when detected object change
+		set_responder(null)
+		# set detected object to new value
 		detected_object = object
 
 # components that's interesting for the player
@@ -42,4 +45,3 @@ func _physics_process(_delta):
 	else:
 		# reset everything to null when not detecting anything
 		set_detected_object(null)
-		set_responder(null)
