@@ -12,8 +12,8 @@ func reachable_interactions(initiator:InteractionInitiatorComponent) -> Array[In
 	return interactions.filter(func (i:Interaction): return distance <= i.max_distance)
 
 func one_interaction(initiator:InteractionInitiatorComponent) -> Interaction:
-	var reachable_interactions:Array[Interaction] = reachable_interactions(initiator)
-	return null if reachable_interactions.is_empty() else reachable_interactions[0]
+	var filtered_interactions:Array[Interaction] = reachable_interactions(initiator)
+	return null if filtered_interactions.is_empty() else filtered_interactions[0]
 
 func input_listener(initiator:InteractionInitiatorComponent) -> Interaction:
 	active_interaction = one_interaction(initiator)

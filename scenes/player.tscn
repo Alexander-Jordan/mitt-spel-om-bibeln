@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/menu/GameStateComponent.gd" id="2_2unbx"]
 [ext_resource type="Script" path="res://scripts/debug/ScreenshotComponent.gd" id="2_ahgv0"]
 [ext_resource type="PackedScene" uid="uid://bl0kv8fnabcw" path="res://scenes/levels/pause_menu.tscn" id="2_cjdfr"]
-[ext_resource type="Script" path="res://scripts/interactor/InteractionInitiatorRaySensorComponent.gd" id="4_h7a4w"]
+[ext_resource type="Script" path="res://scripts/player/PlayerSightComponent.gd" id="4_0ruws"]
 [ext_resource type="PackedScene" uid="uid://dmmkvr8x3sebg" path="res://scenes/player_ui.tscn" id="5_v5yqy"]
 [ext_resource type="AudioStream" uid="uid://d1hs0w458phrw" path="res://assets/audio/mixkit-human-whistle-605.wav" id="6_4m41k"]
 [ext_resource type="Script" path="res://scripts/player/AudioPlayerComponent.gd" id="6_agwr8"]
@@ -26,10 +26,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 [node name="Camera3D" type="Camera3D" parent="head"]
 script = ExtResource("2_ahgv0")
 
-[node name="InteractionInitiatorRaySensorComponent" type="RayCast3D" parent="head" node_paths=PackedStringArray("initiator")]
+[node name="PlayerSightComponent" type="RayCast3D" parent="head"]
 target_position = Vector3(0, 0, -20)
-script = ExtResource("4_h7a4w")
-initiator = NodePath("../../InteractionInitiatorComponent")
+script = ExtResource("4_0ruws")
 
 [node name="GameStateComponent" type="Node" parent="."]
 script = ExtResource("2_2unbx")
@@ -45,5 +44,6 @@ script = ExtResource("6_agwr8")
 [node name="InteractionInitiatorComponent" type="Node3D" parent="."]
 script = ExtResource("9_don63")
 
+[connection signal="responder_changed" from="head/PlayerSightComponent" to="InteractionInitiatorComponent" method="_on_player_sight_component_responder_changed"]
 [connection signal="interaction_changed" from="InteractionInitiatorComponent" to="GameStateComponent/Control" method="_on_interaction_initiator_component_interaction_changed"]
 [connection signal="play_audio" from="InteractionInitiatorComponent" to="AudioPlayerComponent" method="_on_interaction_initiator_component_play_audio"]

@@ -1,5 +1,5 @@
 extends Interaction
 class_name PetAnimalInteraction
 
-func pre_execution_setup(responder:InteractionResponderComponent, initiator:InteractionInitiatorComponent):
+func pre_execution_setup(_responder:InteractionResponderComponent, _initiator:InteractionInitiatorComponent):
 	pass

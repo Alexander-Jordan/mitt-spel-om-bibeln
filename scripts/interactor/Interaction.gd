@@ -9,7 +9,7 @@ class_name Interaction
 @export var min_distance:float = 0
 @export var max_distance:float = 20
 
-func pre_execution_setup(responder:InteractionResponderComponent, initiator:InteractionInitiatorComponent):
+func pre_execution_setup(_responder:InteractionResponderComponent, _initiator:InteractionInitiatorComponent):
 	pass
 
 func is_available():

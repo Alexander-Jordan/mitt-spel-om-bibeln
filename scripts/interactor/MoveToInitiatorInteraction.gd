@@ -1,7 +1,7 @@
 extends Interaction
 class_name MoveToInitiatorInteraction
 
-func pre_execution_setup(responder:InteractionResponderComponent, initiator:InteractionInitiatorComponent):
+func pre_execution_setup(_responder:InteractionResponderComponent, initiator:InteractionInitiatorComponent):
 	# objective to go to the initiator
 	var move_to_caller_objective:Objective = MoveObjective.new()
 	move_to_caller_objective.min_time = 60
