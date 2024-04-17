@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cs2npd8q8sl7d"]
+[gd_scene load_steps=35 format=3 uid="uid://cs2npd8q8sl7d"]
 
 [ext_resource type="Script" path="res://scripts/animals/MovementComponent.gd" id="1_jmd7c"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_qf5kj"]
@@ -10,8 +10,11 @@
 [ext_resource type="Script" path="res://scripts/animals/StateComponent.gd" id="8_sr4gn"]
 [ext_resource type="Script" path="res://scripts/animals/NavigationComponent.gd" id="9_2stbx"]
 [ext_resource type="Script" path="res://scripts/interactor/InteractionResponderComponent.gd" id="10_umsv7"]
+[ext_resource type="AudioStream" uid="uid://2sagl8oyu080" path="res://assets/audio/animals/bear.mp3" id="11_psvya"]
 [ext_resource type="AudioStream" uid="uid://d1hs0w458phrw" path="res://assets/audio/mixkit-human-whistle-605.wav" id="11_w06o2"]
 [ext_resource type="Script" path="res://scripts/interactor/MoveToInitiatorInteraction.gd" id="12_jak2v"]
+[ext_resource type="Script" path="res://scripts/interactor/PetAnimalInteraction.gd" id="12_yxjfd"]
+[ext_resource type="Script" path="res://scripts/animals/AudioPlayer3DComponent.gd" id="15_u7yoh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oosau"]
 
@@ -4023,12 +4026,22 @@ min_time = 1
 max_time = 10
 target = Vector3(0, 0, 0)
 
+[sub_resource type="Resource" id="Resource_ae2wg"]
+script = ExtResource("12_yxjfd")
+name = "Klappa"
+input_action_name = "interact"
+responder_audio = ExtResource("11_psvya")
+objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
+min_distance = 0.0
+max_distance = 3.0
+
 [sub_resource type="Resource" id="Resource_ny455"]
 script = ExtResource("12_jak2v")
 name = "Kalla på"
 input_action_name = "interact"
 initiator_audio = ExtResource("11_w06o2")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
+min_distance = 0.0
 max_distance = 20.0
 
 [node name="bear" type="CharacterBody3D"]
@@ -4077,21 +4090,21 @@ bones/5/parent = 4
 bones/5/rest = Transform3D(0.99925, 0.0387044, 0.000567889, -0.0386715, 0.998827, -0.0291321, -0.00169476, 0.0290883, 0.999575, 2.79257e-09, 0.617098, 6.14641e-08)
 bones/5/enabled = true
 bones/5/position = Vector3(2.79257e-09, 0.617098, 6.14641e-08)
-bones/5/rotation = Quaternion(0.0561566, -0.000239392, -0.019356, 0.998234)
+bones/5/rotation = Quaternion(0.0145975, 0.00572869, 0.146405, 0.9891)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "DEF-spine.005"
 bones/6/parent = 5
 bones/6/rest = Transform3D(1, 3.17802e-08, -8.61009e-07, -1.22933e-08, 0.999744, 0.0226232, 8.61508e-07, -0.0226232, 0.999744, 2.1938e-13, 0.216392, 2.23517e-08)
 bones/6/enabled = true
 bones/6/position = Vector3(2.1938e-13, 0.216392, 2.23517e-08)
-bones/6/rotation = Quaternion(-0.0113113, 0.0108235, -0.000122493, 0.999878)
+bones/6/rotation = Quaternion(-0.0112955, -0.0551977, 0.000624807, 0.998411)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "DEF-spine.006"
 bones/7/parent = 6
 bones/7/rest = Transform3D(1, 2.92749e-07, 3.03358e-07, -3.91851e-07, 0.910867, 0.4127, -1.55502e-07, -0.4127, 0.910867, 3.41949e-14, 0.319219, -5.21541e-08)
 bones/7/enabled = true
 bones/7/position = Vector3(3.41949e-14, 0.319219, -5.21541e-08)
-bones/7/rotation = Quaternion(-0.178242, 0.00327682, -0.0332355, 0.98342)
+bones/7/rotation = Quaternion(-0.304213, 0.0320342, 0.056093, 0.950411)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "VIS_thigh_ik_pole.L"
 bones/8/parent = 0
@@ -4945,21 +4958,21 @@ bones/129/parent = 128
 bones/129/rest = Transform3D(0.99925, 0.0387043, 0.000577361, -0.038671, 0.998827, -0.0291323, -0.00170423, 0.0290882, 0.999575, -3.03529e-09, 0.617098, -7.35934e-08)
 bones/129/enabled = true
 bones/129/position = Vector3(-3.03529e-09, 0.617098, -7.35934e-08)
-bones/129/rotation = Quaternion(0.0561567, -0.000234652, -0.019356, 0.998234)
+bones/129/rotation = Quaternion(0.0145984, 0.00573339, 0.146405, 0.9891)
 bones/129/scale = Vector3(1, 1, 1)
 bones/130/name = "ORG-spine.005"
 bones/130/parent = 129
 bones/130/rest = Transform3D(1, 3.92225e-08, -8.64439e-07, -1.96563e-08, 0.999744, 0.022623, 8.65105e-07, -0.022623, 0.999744, -1.75859e-13, 0.216392, 3.35278e-08)
 bones/130/enabled = true
 bones/130/position = Vector3(-1.75859e-13, 0.216392, 3.35278e-08)
-bones/130/rotation = Quaternion(-0.0113113, 0.0108235, -0.000122493, 0.999878)
+bones/130/rotation = Quaternion(-0.0112955, -0.0551977, 0.000624796, 0.998411)
 bones/130/scale = Vector3(1, 1, 1)
 bones/131/name = "ORG-spine.006"
 bones/131/parent = 130
 bones/131/rest = Transform3D(1, 2.92745e-07, 3.03359e-07, -3.91847e-07, 0.910868, 0.412698, -1.55505e-07, -0.412698, 0.910868, 8.26006e-14, 0.319219, -5.21539e-08)
 bones/131/enabled = true
 bones/131/position = Vector3(8.26006e-14, 0.319219, -5.21539e-08)
-bones/131/rotation = Quaternion(-0.178242, 0.00327682, -0.0332355, 0.98342)
+bones/131/rotation = Quaternion(-0.304213, 0.0320342, 0.0560929, 0.950411)
 bones/131/scale = Vector3(1, 1, 1)
 bones/132/name = "MCH-ROT-neck"
 bones/132/parent = 128
@@ -4973,21 +4986,21 @@ bones/133/parent = 132
 bones/133/rest = Transform3D(1, 2.9893e-07, 1.09416e-05, -5.46563e-08, -0.999478, 0.0323015, 1.09456e-05, -0.0323015, -0.999478, -8.7658e-10, 2.58359e-09, -1.20882e-07)
 bones/133/enabled = true
 bones/133/position = Vector3(-8.7658e-10, 2.58359e-09, -1.20882e-07)
-bones/133/rotation = Quaternion(0.998331, -9.50326e-08, 5.45902e-06, -0.0577557)
+bones/133/rotation = Quaternion(0.986064, -0.165578, 0.00268039, -0.0159292)
 bones/133/scale = Vector3(1, 1, 1)
 bones/134/name = "MCH-ROT-head"
 bones/134/parent = 133
 bones/134/rest = Transform3D(1, -5.06054e-08, 1.56583e-06, -2.77112e-13, -0.999478, -0.0323015, 1.56665e-06, 0.0323014, -0.999478, 6.57252e-14, 0.535577, 5.21542e-08)
 bones/134/enabled = true
 bones/134/position = Vector3(6.57252e-14, 0.535577, 5.21542e-08)
-bones/134/rotation = Quaternion(0.998331, -4.92426e-08, 4.58177e-06, 0.0577557)
+bones/134/rotation = Quaternion(0.986065, -0.165578, 0.00267957, 0.0159288)
 bones/134/scale = Vector3(1, 1, 1)
 bones/135/name = "head"
 bones/135/parent = 134
 bones/135/rest = Transform3D(1, 3.51008e-12, 9.49473e-07, 3.7171e-07, -0.920184, -0.391487, 8.73688e-07, 0.391487, -0.920183, -1.73035e-15, -2.88594e-08, 1.19209e-07)
 bones/135/enabled = true
 bones/135/position = Vector3(-1.73035e-15, -2.88594e-08, 1.19209e-07)
-bones/135/rotation = Quaternion(0.991434, 0.0305198, 0.015588, 0.126036)
+bones/135/rotation = Quaternion(0.934592, -0.196457, -0.0696252, 0.288262)
 bones/135/scale = Vector3(1, 1, 1)
 bones/136/name = "tweak_spine.004"
 bones/136/parent = 133
@@ -5008,7 +5021,7 @@ bones/138/parent = 137
 bones/138/rest = Transform3D(1, 7.61948e-13, 3.45835e-13, -7.61949e-13, 1, 4.63799e-07, -3.45834e-13, -4.63799e-07, 1, -4.57126e-09, 0.216372, 0.00291777)
 bones/138/enabled = true
 bones/138/position = Vector3(-4.57126e-09, 0.216372, 0.00291777)
-bones/138/rotation = Quaternion(0.0373132, 0.010694, -0.0134066, 0.999156)
+bones/138/rotation = Quaternion(-0.0481968, -0.0540959, 0.0898948, 0.993312)
 bones/138/scale = Vector3(1, 1, 1)
 bones/139/name = "tweak_spine.005"
 bones/139/parent = 138
@@ -5922,9 +5935,13 @@ debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="InteractionResponderComponent" type="Node3D" parent="."]
 script = ExtResource("10_umsv7")
-interactions = Array[Resource("res://scripts/interactor/Interaction.gd")]([SubResource("Resource_ny455")])
+interactions = Array[Resource("res://scripts/interactor/Interaction.gd")]([SubResource("Resource_ae2wg"), SubResource("Resource_ny455")])
+
+[node name="AudioPlayer3DComponent" type="AudioStreamPlayer3D" parent="."]
+script = ExtResource("15_u7yoh")
 
 [connection signal="state_changed" from="SituationAwarenessComponent/AnimalObjectives/StateComponent" to="AnimationComponent" method="_on_state_component_state_changed"]
 [connection signal="state_changed" from="SituationAwarenessComponent/AnimalObjectives/StateComponent" to="SituationAwarenessComponent/AnimalObjectives/NavigationComponent" method="_on_state_component_state_changed"]
 [connection signal="next_path_position" from="SituationAwarenessComponent/AnimalObjectives/NavigationComponent" to="." method="_on_navigation_component_next_path_position"]
 [connection signal="execute_objectives" from="InteractionResponderComponent" to="SituationAwarenessComponent" method="_on_interaction_responder_component_execute_objectives"]
+[connection signal="play_responder_audio" from="InteractionResponderComponent" to="AudioPlayer3DComponent" method="_on_interaction_responder_component_play_responder_audio"]
