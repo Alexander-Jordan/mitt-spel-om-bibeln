@@ -1,10 +1,11 @@
 extends Node3D
 class_name SituationAwarenessComponent
 
-var area_close: Area3D
-var animal_objectives: AnimalObjectives
+var area_close:Area3D
+var animal_objectives:AnimalObjectives
 
-@export var player_is_close_objective: Objective
+@export var player_is_close_objective:Objective
+@export var answers_to:AudioStream
 
 func _ready():
 	for child in get_children():
@@ -39,3 +40,9 @@ func player_entered_close():
 func player_exited_close():
 	if player_is_close_objective != null:
 		animal_objectives.objectives.next_in_queue()
+
+func _on_interaction_responder_component_execute_objectives(objectives):
+	for objective in objectives:
+		animal_objectives.add_objective(objective, true)
+	# execute next objective in queue
+	animal_objectives.objectives.next_in_queue()

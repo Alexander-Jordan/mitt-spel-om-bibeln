@@ -27,7 +27,7 @@ func _ready():
 		if collision is CollisionShape3D:
 			fluid_interactor.add_collision_shape(collision)
 
-func _input(event):	
+func _input(event):
 	# rotate player in x axis & the head in y axis according to the mouse movement
 	# but only when mouse mode is set to CAPTURED
 	if event is InputEventMouseMotion && Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:

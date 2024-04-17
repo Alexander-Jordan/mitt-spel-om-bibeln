@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://pyfp2c54twv8"]
+[gd_scene load_steps=25 format=3 uid="uid://pyfp2c54twv8"]
 
 [ext_resource type="Script" path="res://scripts/animals/MovementComponent.gd" id="1_jntys"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_vy1p8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/objective/IdleObjective.gd" id="5_jogga"]
 [ext_resource type="Script" path="res://scripts/animals/AnimalObjectives.gd" id="5_jyi2c"]
 [ext_resource type="Script" path="res://scripts/animals/StateComponent.gd" id="6_1inen"]
+[ext_resource type="AudioStream" uid="uid://d1hs0w458phrw" path="res://assets/audio/mixkit-human-whistle-605.wav" id="6_if5od"]
 [ext_resource type="Script" path="res://scripts/objective/MoveObjective.gd" id="7_03l17"]
 [ext_resource type="Script" path="res://scripts/animals/NavigationComponent.gd" id="7_uq3rr"]
 
@@ -86,6 +87,9 @@ max_time = 10
 
 [sub_resource type="Resource" id="Resource_g7pgb"]
 script = ExtResource("7_03l17")
+min_time = 1
+max_time = 10
+target = Vector3(0, 0, 0)
 
 [node name="elephant" type="CharacterBody3D"]
 script = ExtResource("1_jntys")
@@ -113,6 +117,7 @@ script = ExtResource("3_fgdfl")
 [node name="SituationAwarenessComponent" type="Node3D" parent="."]
 script = ExtResource("4_mayp3")
 player_is_close_objective = SubResource("Resource_kujku")
+answers_to = ExtResource("6_if5od")
 
 [node name="Area3D" type="Area3D" parent="SituationAwarenessComponent"]
 

@@ -1,6 +1,10 @@
 extends Objective
 class_name MoveObjective
 
+@export var min_time: int = 1
+@export var max_time: int = 10
+@export var target:Vector3 = Vector3.ZERO
+
 var state_component: StateComponent
 var navigation_component: NavigationComponent
 var state: String = 'moving'
@@ -19,7 +23,10 @@ func try_to_set_required_components(nodes_to_search: Array[Node]) -> bool:
 
 # execute the objective
 func execute():
-	navigation_component.set_random_target()
+	if target == Vector3.ZERO:
+		navigation_component.set_random_target()
+	else:
+		navigation_component.set_target(target)
 	navigation_component.target_reached.connect(_on_objective_done)
 	state_component.set_state(self.state)
-	start_random_time_from_range(1, 10)
+	start_random_time_from_range(self.min_time, self.max_time)
