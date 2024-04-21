@@ -42,7 +42,7 @@ radius = 0.0882789
 
 [sub_resource type="Resource" id="Resource_k678p"]
 script = ExtResource("3_1chha")
-name = "Eat [E]"
+name = "Eat"
 input_action_name = "interact"
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
 min_distance = 0.0
