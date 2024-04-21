@@ -2159,6 +2159,7 @@ script = ExtResource("50_yakdn")
 item_scene = ExtResource("51_wvh05")
 
 [connection signal="drop_item" from="environment/trees/tree_apple_1" to="ApplePool" method="_on_spawn_item"]
+[connection signal="drop_item" from="environment/trees/tree_apple_2" to="ApplePool" method="_on_spawn_item"]
 
 [editable path="environment/blockout/level_1_ground"]
 [editable path="environment/blockout/level_1_entreance_rock_1"]
