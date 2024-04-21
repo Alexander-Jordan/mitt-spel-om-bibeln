@@ -30,10 +30,12 @@ func spawn_item(pos:Vector3):
 	var item:Node3D = self.get_item()
 	item.position = pos
 	item.visible = true
+	item.process_mode = Node.PROCESS_MODE_INHERIT
 
 func destroy_item(item:Node3D):
 	item.visible = false
 	item.position = Vector3.ZERO
+	item.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_spawn_item(pos:Vector3):
 	spawn_item(pos)

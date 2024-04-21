@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqjiwaislvnl6"]
+[gd_scene load_steps=10 format=3 uid="uid://bqjiwaislvnl6"]
 
+[ext_resource type="Script" path="res://scripts/tree/FruitComponent.gd" id="1_78p5u"]
+[ext_resource type="Script" path="res://scripts/interactor/InteractionResponderComponent.gd" id="2_asoud"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_d2rge"]
+[ext_resource type="Script" path="res://scripts/interactor/Interaction.gd" id="3_1chha"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovfqm"]
 
@@ -37,10 +40,19 @@ shadow_mesh = SubResource("ArrayMesh_33iuf")
 [sub_resource type="SphereShape3D" id="SphereShape3D_tor0b"]
 radius = 0.0882789
 
+[sub_resource type="Resource" id="Resource_k678p"]
+script = ExtResource("3_1chha")
+name = "Eat [E]"
+input_action_name = "interact"
+objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
+min_distance = 0.0
+max_distance = 20.0
+
 [node name="apple" type="RigidBody3D"]
 mass = 0.2
 continuous_cd = true
 lock_rotation = true
+script = ExtResource("1_78p5u")
 
 [node name="apple2" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_udak1")
@@ -50,3 +62,9 @@ surface_material_override/0 = ExtResource("2_d2rge")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.113756, 0)
 shape = SubResource("SphereShape3D_tor0b")
+
+[node name="InteractionResponderComponent" type="Node3D" parent="."]
+script = ExtResource("2_asoud")
+interactions = Array[ExtResource("3_1chha")]([SubResource("Resource_k678p")])
+
+[connection signal="execute_objectives" from="InteractionResponderComponent" to="." method="_on_interaction_responder_component_execute_objectives"]
