@@ -6,6 +6,8 @@ var timer: Timer
 var min_time: float = 1
 var max_time: float = 60
 
+signal drop_item(position:Vector3)
+
 func _ready():
 	for child in get_children():
 		if child is Timer:
@@ -49,3 +51,7 @@ func _on_interaction_responder_component_execute_objectives(execute_objectives):
 			objectives.add_to_queue(objective)
 	# execute next objective in queue
 	objectives.next_in_queue()
+
+
+func _on_drop_component_drop_item(position:Vector3):
+	drop_item.emit(position)
