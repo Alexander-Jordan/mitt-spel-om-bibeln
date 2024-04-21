@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqjiwaislvnl6"]
+[gd_scene load_steps=11 format=3 uid="uid://bqjiwaislvnl6"]
 
 [ext_resource type="Script" path="res://scripts/tree/FruitComponent.gd" id="1_78p5u"]
 [ext_resource type="Script" path="res://scripts/interactor/InteractionResponderComponent.gd" id="2_asoud"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_d2rge"]
 [ext_resource type="Script" path="res://scripts/interactor/Interaction.gd" id="3_1chha"]
+[ext_resource type="AudioStream" uid="uid://bprfe4h658nhg" path="res://assets/audio/eat.wav" id="4_2koht"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovfqm"]
 
@@ -44,6 +45,7 @@ radius = 0.0882789
 script = ExtResource("3_1chha")
 name = "Eat"
 input_action_name = "interact"
+initiator_audio = ExtResource("4_2koht")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
 min_distance = 0.0
 max_distance = 20.0
