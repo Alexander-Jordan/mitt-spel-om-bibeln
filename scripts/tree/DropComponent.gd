@@ -11,4 +11,3 @@ func drop():
 		drop_location.progress_ratio = randf()
 		# drop item at the random position
 		drop_item.emit(drop_location.global_position)
-		print(drop_location.global_position)

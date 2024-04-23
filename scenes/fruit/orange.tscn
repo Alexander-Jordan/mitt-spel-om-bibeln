@@ -50,11 +50,14 @@ script = ExtResource("4_55p2w")
 name = "Eat"
 input_action_name = "interact"
 initiator_audio = SubResource("AudioStreamWAV_lvjb5")
-objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
+objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
 min_distance = 0.0
 max_distance = 20.0
 
 [node name="orange" type="RigidBody3D"]
+mass = 0.2
+continuous_cd = true
+lock_rotation = true
 script = ExtResource("1_xgbtn")
 
 [node name="orange2" type="MeshInstance3D" parent="."]
@@ -69,3 +72,5 @@ shape = SubResource("SphereShape3D_avya8")
 [node name="InteractionResponderComponent" type="Node3D" parent="."]
 script = ExtResource("3_b6m1w")
 interactions = Array[ExtResource("4_55p2w")]([SubResource("Resource_mo4es")])
+
+[connection signal="execute_objectives" from="InteractionResponderComponent" to="." method="_on_interaction_responder_component_execute_objectives"]
