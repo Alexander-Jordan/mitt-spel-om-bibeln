@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccrmo2dvcio32"]
+
+[ext_resource type="PackedScene" uid="uid://dwx145ucq086h" path="res://assets/models/characters/milo_avatar.glb" id="1_ukiy1"]
+[ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_apmgv"]
+
+[node name="milo_avatar" instance=ExtResource("1_ukiy1")]
+
+[node name="Skeleton3D" parent="milo_armature" index="0"]
+bones/0/position = Vector3(3.8202, -4.7528, -557.191)
+bones/0/rotation = Quaternion(-0.728813, -0.0509744, 0.0284677, 0.682219)
+bones/1/position = Vector3(-7.15256e-07, 106.91, -9.67231)
+bones/1/rotation = Quaternion(0.0247758, 0.0167172, 0.0195493, 0.999362)
+bones/2/position = Vector3(-4.76835e-07, 125.238, -2.38421e-07)
+bones/2/rotation = Quaternion(-0.0014288, 0.00348719, -0.00971813, 0.999946)
+bones/3/position = Vector3(-1.07288e-06, 143.129, -2.98022e-07)
+bones/3/rotation = Quaternion(-0.00138451, 0.00335955, -0.00977432, 0.999946)
+bones/4/position = Vector3(-4.76837e-06, 161.02, -7.49655e-06)
+bones/4/rotation = Quaternion(0.0422425, 0.0028951, 0.00595706, 0.999085)
+bones/5/position = Vector3(1.3411e-06, 161.62, 14.0593)
+bones/5/rotation = Quaternion(0.0308126, 0.0232185, 0.00488673, 0.999243)
+bones/6/position = Vector3(2.38419e-07, 822.55, 71.5538)
+bones/7/position = Vector3(64.1013, 139.717, -1.93955)
+bones/7/rotation = Quaternion(-0.573049, -0.427119, 0.508802, -0.479901)
+bones/8/position = Vector3(8.71578e-06, 135.263, 0.000151932)
+bones/8/rotation = Quaternion(0.418891, 0.459827, 0.020528, 0.782731)
+bones/9/position = Vector3(-4.63796e-05, 224.272, 1.22769e-05)
+bones/9/rotation = Quaternion(0.0510094, 9.31829e-05, 0.426414, 0.903089)
+bones/10/position = Vector3(2.38418e-06, 192.749, -1.90735e-05)
+bones/11/position = Vector3(-64.1013, 139.714, -1.91534)
+bones/11/rotation = Quaternion(0.648541, -0.362229, 0.459175, 0.487178)
+bones/12/position = Vector3(-1.24036e-05, 135.263, -7.14372e-05)
+bones/12/rotation = Quaternion(0.368425, -0.451323, 0.0607489, 0.810481)
+bones/13/position = Vector3(-0.000135223, 224.365, -2.941e-05)
+bones/13/rotation = Quaternion(0.0695443, 1.62127e-05, -0.57182, 0.817426)
+bones/14/position = Vector3(1.33514e-05, 192.635, -2.76566e-05)
+bones/15/position = Vector3(182.214, -59.4436, -1.2346)
+bones/15/rotation = Quaternion(0.02206, -0.0134394, 0.997259, -0.0693398)
+bones/16/position = Vector3(-3.60367e-05, 256.4, -1.24918e-06)
+bones/16/rotation = Quaternion(-0.261064, -0.0822309, -0.0189048, 0.961627)
+bones/17/position = Vector3(2.84138e-06, 203.938, 2.99906e-06)
+bones/17/rotation = Quaternion(0.558618, -0.120267, 0.0252146, 0.820272)
+bones/18/position = Vector3(-5.19752e-08, 74.9075, -5.30652e-06)
+bones/18/rotation = Quaternion(0.391218, -0.068765, 0.0293292, 0.917256)
+bones/19/position = Vector3(-1.35452e-05, 37.4522, -5.96001e-07)
+bones/20/position = Vector3(-182.214, -59.4436, -1.06195)
+bones/20/rotation = Quaternion(0.0190162, 0.0219005, 0.99956, 0.00615222)
+bones/21/position = Vector3(8.5331e-06, 256.401, 3.13349e-06)
+bones/21/rotation = Quaternion(-0.221347, 0.078112, -0.0446432, 0.971036)
+bones/22/position = Vector3(-7.79486e-06, 203.939, -1.60323e-05)
+bones/22/rotation = Quaternion(0.510627, 0.00119699, 0.0138816, 0.859689)
+bones/23/position = Vector3(5.91799e-06, 74.4025, -1.27362e-05)
+bones/23/rotation = Quaternion(0.394649, 0.0692121, -0.0298342, 0.915736)
+bones/24/position = Vector3(3.27677e-05, 36.9546, -5.58793e-06)
+
+[node name="milo" parent="milo_armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_apmgv")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature_001|mixamo_com|Layer0"

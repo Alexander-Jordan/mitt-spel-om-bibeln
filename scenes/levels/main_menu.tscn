@@ -1,7 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene load_steps=24 format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
+[ext_resource type="PackedScene" uid="uid://ccrmo2dvcio32" path="res://scenes/characters/avatars/milo_avatar.tscn" id="1_lykv6"]
+[ext_resource type="PackedScene" uid="uid://cc7viq7qjyfnr" path="res://scenes/characters/avatars/alex_avatar.tscn" id="1_s3sf0"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_4cpw2"]
 [ext_resource type="Script" path="res://scripts/menu/main_menu_camera_manager.gd" id="2_5fxog"]
 [ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="3_8qya4"]
@@ -92,6 +94,12 @@ light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.5
 omni_attenuation = 0.225313
+
+[node name="milo_avatar" parent="Background" instance=ExtResource("1_lykv6")]
+transform = Transform3D(0.00575391, 0, 0.00817879, 0, 0.01, 0, -0.00817879, 0, 0.00575391, 0.283626, 0, 1.92714)
+
+[node name="alex_avatar" parent="Background" instance=ExtResource("1_s3sf0")]
+transform = Transform3D(0.00579053, 0, -0.00815289, 0, 0.01, 0, 0.00815289, 0, 0.00579053, 0.748528, 0, 1.9178)
 
 [node name="sovrum" parent="Background" instance=ExtResource("1_h6pfy")]
 
@@ -185,6 +193,9 @@ transform = Transform3D(0.838965, 0.190542, -0.509736, 1.36786e-08, 0.936697, 0.
 [node name="LevelsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
 transform = Transform3D(0.933916, 0.34795, -0.0820478, 0.00214303, 0.224056, 0.974574, 0.357486, -0.910346, 0.208504, 0.653782, 0.694648, 0.909354)
 
+[node name="CreditsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+transform = Transform3D(0.999997, 0.000194456, 0.00260475, -1.45519e-11, 0.997225, -0.074447, -0.002612, 0.0744467, 0.997222, 0.515197, 0.104262, 2.44695)
+
 [node name="MenuUI" type="Control" parent="." node_paths=PackedStringArray("button_pressed_audio_stream_player")]
 layout_mode = 3
 anchors_preset = 15
@@ -231,10 +242,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Starta spel"
 
-[node name="SettingsButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Inställningar"
+text = "Skapare"
 
 [node name="QuitButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
 layout_mode = 2
@@ -329,6 +340,46 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 text = "Ladda bana"
 
+[node name="Credits" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Subtitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spelets skapare"
+
+[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_11fsp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Milo" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Milo Laakso"
+horizontal_alignment = 1
+
+[node name="Alex" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Alexander Jordan"
+horizontal_alignment = 1
+
 [node name="LevelLoadComponent" type="Node" parent="."]
 script = ExtResource("15_42nej")
 
@@ -342,11 +393,13 @@ stream = ExtResource("17_bdmej")
 
 [connection signal="menu_changed" from="MenuUI" to="Background/SubViewportContainer/SubViewport/CameraManager" method="_on_menu_ui_menu_changed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/StartButton" to="MenuUI" method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/CreditsButton" to="MenuUI" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
 [connection signal="load_scene_from_level" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect" to="LevelLoadComponent" method="_on_level_select_load_scene_from_level"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer/BackButton" to="MenuUI" method="_on_level_select_back_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/PreviousButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_previous_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/NextButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_next_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_load_level_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer/BackButton" to="MenuUI" method="_on_credits_back_button_pressed"]
 
 [editable path="Background/sovrum"]
