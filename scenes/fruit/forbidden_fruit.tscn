@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh20ks7cx1m26"]
+[gd_scene load_steps=13 format=3 uid="uid://bh20ks7cx1m26"]
 
 [ext_resource type="Script" path="res://scripts/tree/FruitComponent.gd" id="1_t2182"]
 [ext_resource type="Material" uid="uid://cqcseehq6qdhi" path="res://assets/materials/ImphenziaPixPal_material.tres" id="2_nk8gf"]
 [ext_resource type="Script" path="res://scripts/interactor/InteractionResponderComponent.gd" id="3_6srla"]
 [ext_resource type="Script" path="res://scripts/interactor/Interaction.gd" id="4_aky5j"]
+[ext_resource type="Script" path="res://scripts/objective/LoseObjective.gd" id="4_wise8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75h0k"]
 
@@ -44,12 +45,16 @@ data = PackedByteArray(202, 255, 187, 255, 203, 255, 237, 255, 217, 255, 221, 25
 format = 1
 mix_rate = 48000
 
+[sub_resource type="Resource" id="Resource_0l52r"]
+script = ExtResource("4_wise8")
+
 [sub_resource type="Resource" id="Resource_lb5yc"]
 script = ExtResource("4_aky5j")
-name = "Eat"
+name = "Ät den förbjudna frukten"
 input_action_name = "interact"
 initiator_audio = SubResource("AudioStreamWAV_77x5t")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
+initiator_objectives = Array[Resource("res://scripts/objective/Objective.gd")]([SubResource("Resource_0l52r")])
 min_distance = 0.0
 max_distance = 20.0
 

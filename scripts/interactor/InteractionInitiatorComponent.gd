@@ -5,6 +5,7 @@ var responder:InteractionResponderComponent = null : set = set_responder
 var interaction:Interaction = null
 
 signal play_audio(audio:AudioStream)
+signal execute_objectives(objectives:Array[Objective])
 signal interaction_changed(interaction:Interaction)
 
 func _process(_delta):

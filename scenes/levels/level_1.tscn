@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://5rrobgnot4xj"]
+[gd_scene load_steps=71 format=3 uid="uid://5rrobgnot4xj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="1_24w0d"]
 [ext_resource type="PackedScene" uid="uid://bjyu2g4v4lxkd" path="res://assets/models/level_blockouts/level_1/level_1_ground.glb" id="1_pyi77"]
@@ -56,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://cdj4tmt841cn2" path="res://scenes/fruit/orange.tscn" id="54_3sg44"]
 [ext_resource type="PackedScene" uid="uid://b207h1sm35qhr" path="res://scenes/fruit/pear.tscn" id="55_pqpt8"]
 [ext_resource type="PackedScene" uid="uid://bca3t0vqxrpg" path="res://scenes/fruit/pomegranate.tscn" id="56_mxypg"]
+[ext_resource type="PackedScene" uid="uid://bh20ks7cx1m26" path="res://scenes/fruit/forbidden_fruit.tscn" id="57_lto1b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kkydq"]
 sky_top_color = Color(0.368627, 0.447059, 0.694118, 1)
@@ -122,6 +123,12 @@ shader = ExtResource("5_tftl2")
 [sub_resource type="BoxMesh" id="BoxMesh_bdwxm"]
 material = SubResource("ShaderMaterial_p4ncv")
 size = Vector3(500, 2, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntpnf"]
+size = Vector3(13.5782, 41.1197, 29.2926)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anxhf"]
+size = Vector3(130.207, 41.1197, 11.2426)
 
 [sub_resource type="Animation" id="Animation_bl5wi"]
 resource_name = "new_animation"
@@ -1671,8 +1678,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.454, 3.12871, 36.5234)
 [node name="tree_pomegranate_3" parent="environment/trees" instance=ExtResource("23_55aau")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.2311, 2.63503, 67.9742)
 
-[node name="player" parent="." instance=ExtResource("1_24w0d")]
+[node name="blocking_colliders" type="Node3D" parent="environment"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="environment/blocking_colliders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/blocking_colliders/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.063, 13.7442, -7.63557)
+shape = SubResource("BoxShape3D_ntpnf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="environment/blocking_colliders/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.685, 13.7442, -7.63557)
+shape = SubResource("BoxShape3D_ntpnf")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="environment/blocking_colliders/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74497, 13.7442, -99.2029)
+shape = SubResource("BoxShape3D_anxhf")
+
+[node name="player" parent="." node_paths=PackedStringArray("lose_position") instance=ExtResource("1_24w0d")]
 transform = Transform3D(-0.892476, 0, -0.451096, 0, 1, 0, 0.451096, 0, -0.892476, -117.829, 19.7013, -69.9708)
+lose_position = NodePath("../lose_position")
 
 [node name="animals" type="Node3D" parent="."]
 
@@ -2185,6 +2209,14 @@ item_scene = ExtResource("55_pqpt8")
 script = ExtResource("50_yakdn")
 item_scene = ExtResource("56_mxypg")
 
+[node name="ForbiddenFruitPool" type="Node3D" parent="item_pools"]
+script = ExtResource("50_yakdn")
+item_scene = ExtResource("57_lto1b")
+
+[node name="lose_position" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40624, -157.746)
+
+[connection signal="drop_item" from="environment/trees/tree_forbidden" to="item_pools/ForbiddenFruitPool" method="_on_spawn_item"]
 [connection signal="drop_item" from="environment/trees/tree_apple_1" to="item_pools/ApplePool" method="_on_spawn_item"]
 [connection signal="drop_item" from="environment/trees/tree_apple_2" to="item_pools/ApplePool" method="_on_spawn_item"]
 [connection signal="drop_item" from="environment/trees/tree_apple_3" to="item_pools/ApplePool" method="_on_spawn_item"]

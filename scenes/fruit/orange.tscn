@@ -47,10 +47,11 @@ mix_rate = 48000
 
 [sub_resource type="Resource" id="Resource_mo4es"]
 script = ExtResource("4_55p2w")
-name = "Eat"
+name = "Ät apelsin"
 input_action_name = "interact"
 initiator_audio = SubResource("AudioStreamWAV_lvjb5")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
+initiator_objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
 min_distance = 0.0
 max_distance = 20.0
 

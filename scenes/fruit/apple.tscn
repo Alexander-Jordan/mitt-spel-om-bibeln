@@ -43,10 +43,11 @@ radius = 0.0882789
 
 [sub_resource type="Resource" id="Resource_k678p"]
 script = ExtResource("3_1chha")
-name = "Eat"
+name = "Ät äpple"
 input_action_name = "interact"
 initiator_audio = ExtResource("4_2koht")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([null])
+initiator_objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
 min_distance = 0.0
 max_distance = 20.0
 
