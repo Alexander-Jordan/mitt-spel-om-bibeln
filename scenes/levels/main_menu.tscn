@@ -46,6 +46,8 @@ volumetric_fog_sky_affect = 0.5
 [sub_resource type="Theme" id="Theme_cw3cf"]
 default_font = ExtResource("1_hdq7i")
 default_font_size = 30
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
 
 [sub_resource type="Resource" id="Resource_aux6x"]
 script = ExtResource("8_wfrql")
@@ -229,6 +231,7 @@ theme_override_font_sizes/font_size = 62
 text = "Mitt spel om Bibeln"
 
 [node name="Main" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -253,7 +256,6 @@ size_flags_horizontal = 4
 text = "Avsluta"
 
 [node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer" node_paths=PackedStringArray("button_pressed_audio_stream_player")]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 50
