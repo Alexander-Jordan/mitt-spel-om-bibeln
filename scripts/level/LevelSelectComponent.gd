@@ -5,9 +5,11 @@ class_name LevelSelectComponent
 @export var levels:Array[Level]
 var current_level:Level
 
-@onready var name_label:Label = $HBoxContainer2/VBoxContainer/LevelName
-@onready var image_texture_rect:TextureRect = $HBoxContainer2/VBoxContainer/HBoxContainer/LevelImage
-@onready var description_label:Label = $HBoxContainer2/VBoxContainer/HBoxContainer/LevelDescription
+@onready var level_selector:VBoxContainer = $LevelSelector
+@onready var level_load:MarginContainer = $LevelLoad
+@onready var name_label:Label = $LevelSelector/HBoxContainer2/VBoxContainer/LevelName
+@onready var image_texture_rect:TextureRect = $LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer/LevelImage
+@onready var description_label:Label = $LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer/LevelDescription
 
 signal load_scene_from_level(level:Level)
 
@@ -52,3 +54,6 @@ func _on_load_level_button_pressed():
 	if button_pressed_audio_stream_player:
 		button_pressed_audio_stream_player.play(0.2)
 	load_scene_from_level.emit(current_level)
+	level_selector.visible = false
+	level_load.visible = true
+	

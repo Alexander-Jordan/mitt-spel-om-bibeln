@@ -231,7 +231,6 @@ theme_override_font_sizes/font_size = 62
 text = "Mitt spel om Bibeln"
 
 [node name="Main" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -256,6 +255,7 @@ size_flags_horizontal = 4
 text = "Avsluta"
 
 [node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer" node_paths=PackedStringArray("button_pressed_audio_stream_player")]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 50
@@ -263,17 +263,21 @@ script = ExtResource("6_2okh0")
 button_pressed_audio_stream_player = NodePath("../../../../ButtonClickAudioStreamPlayer")
 levels = Array[ExtResource("8_wfrql")]([SubResource("Resource_aux6x"), SubResource("Resource_san63")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+[node name="LevelSelector" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="MenuTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer"]
+[node name="MenuTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Välj bana"
 
-[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer"]
+[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -282,11 +286,11 @@ icon = ExtResource("4_11fsp")
 icon_alignment = 1
 expand_icon = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PreviousButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+[node name="PreviousButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -296,22 +300,22 @@ ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LevelName" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer"]
+[node name="LevelName" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Level Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LevelImage" type="TextureRect" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="LevelImage" type="TextureRect" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -319,14 +323,14 @@ texture = ExtResource("9_p2ci6")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="LevelDescription" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="LevelDescription" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "This is a description"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2"]
+[node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -335,12 +339,32 @@ texture_normal = ExtResource("5_eifie")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LoadLevelButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+[node name="LoadLevelButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 text = "Ladda bana"
+
+[node name="LevelLoad" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer"]
+layout_mode = 2
+text = "Laddar bana..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
 
 [node name="Credits" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
 visible = false
@@ -382,8 +406,9 @@ layout_mode = 2
 text = "Alexander Jordan"
 horizontal_alignment = 1
 
-[node name="LevelLoadComponent" type="Node" parent="."]
+[node name="LevelLoadComponent" type="Node" parent="." node_paths=PackedStringArray("progress_bar")]
 script = ExtResource("15_42nej")
+progress_bar = NodePath("../MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer/ProgressBar")
 
 [node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_f52c8")
@@ -398,10 +423,10 @@ stream = ExtResource("17_bdmej")
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/CreditsButton" to="MenuUI" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="MenuUI" method="_on_quit_button_pressed"]
 [connection signal="load_scene_from_level" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect" to="LevelLoadComponent" method="_on_level_select_load_scene_from_level"]
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer/BackButton" to="MenuUI" method="_on_level_select_back_button_pressed"]
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/PreviousButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_previous_button_pressed"]
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/HBoxContainer2/NextButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_next_button_pressed"]
-[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LoadLevelButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_load_level_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer/BackButton" to="MenuUI" method="_on_level_select_back_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/PreviousButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/NextButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_next_button_pressed"]
+[connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/LoadLevelButton" to="MenuUI/MarginContainer/VBoxContainer/LevelSelect" method="_on_load_level_button_pressed"]
 [connection signal="pressed" from="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer/BackButton" to="MenuUI" method="_on_credits_back_button_pressed"]
 
 [editable path="Background/sovrum"]
