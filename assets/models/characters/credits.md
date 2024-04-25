@@ -1,0 +1,1 @@
+- [Low Poly Characters (PACK)](https://skfb.ly/6XItD) by micaelsampaio is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).
