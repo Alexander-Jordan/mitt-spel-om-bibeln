@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var lose_position:Node3D
 @export var mass:float = 1.0
 @export var fluid_damp:float = 5.0
 
@@ -76,3 +77,8 @@ func fluid_area_enter(area: FluidArea3D) -> void:
 
 func fluid_area_exit(area: FluidArea3D) -> void:
 	fluid_interactor.fluid_area_exit(area)
+
+func _on_interaction_initiator_component_execute_objectives(objectives:Array[Objective]):
+	for objective in objectives:
+		if objective is LoseObjective:
+			self.position = lose_position.global_position

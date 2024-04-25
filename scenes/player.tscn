@@ -45,5 +45,6 @@ script = ExtResource("6_agwr8")
 script = ExtResource("9_don63")
 
 [connection signal="responder_changed" from="head/PlayerSightComponent" to="InteractionInitiatorComponent" method="_on_player_sight_component_responder_changed"]
+[connection signal="execute_objectives" from="InteractionInitiatorComponent" to="." method="_on_interaction_initiator_component_execute_objectives"]
 [connection signal="interaction_changed" from="InteractionInitiatorComponent" to="GameStateComponent/Control" method="_on_interaction_initiator_component_interaction_changed"]
 [connection signal="play_audio" from="InteractionInitiatorComponent" to="AudioPlayerComponent" method="_on_interaction_initiator_component_play_audio"]

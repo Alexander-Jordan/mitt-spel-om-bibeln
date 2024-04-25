@@ -7,6 +7,7 @@ var active_interaction:Interaction = null
 signal play_responder_audio(audio:AudioStream)
 signal execute_objectives(objectives:Array[Objective])
 
+
 func reachable_interactions(initiator:InteractionInitiatorComponent) -> Array[Interaction]:
 	var distance:float = self.global_position.distance_to(initiator.global_position)
 	return interactions.filter(func (i:Interaction): return distance <= i.max_distance)
@@ -33,5 +34,7 @@ func execute_action(initiator:InteractionInitiatorComponent):
 		initiator.play_audio.emit(active_interaction.initiator_audio)
 	if active_interaction.responder_audio != null:
 		play_responder_audio.emit(active_interaction.responder_audio)
+	if not active_interaction.initiator_objectives.is_empty():
+		initiator.execute_objectives.emit(active_interaction.initiator_objectives)
 	if not active_interaction.objectives.is_empty():
 		execute_objectives.emit(active_interaction.objectives)

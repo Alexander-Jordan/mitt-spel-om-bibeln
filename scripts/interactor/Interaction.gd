@@ -6,6 +6,7 @@ class_name Interaction
 @export var initiator_audio:AudioStream
 @export var responder_audio:AudioStream
 @export var objectives:Array[Objective]
+@export var initiator_objectives:Array[Objective]
 @export var min_distance:float = 0
 @export var max_distance:float = 20
 
