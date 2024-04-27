@@ -17,16 +17,9 @@ func _ready():
 	assert(raycast != null, "A RayCast3D is required as child node")
 
 func _physics_process(delta):
-	# add gravity
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	
 	if target_position is Vector3:
-		var n: Vector3 = raycast.get_collision_normal()
-		if n.length_squared() < 0.001:
-			n = Vector3(0, 1, 0)
-		transform = transform.interpolate_with(transform.looking_at(target_position, n, true), rotation_speed)
-		velocity = transform.basis.z.slide(n).normalized() * movement_speed
+		transform = transform.interpolate_with(transform.looking_at(target_position, Vector3.UP, true), rotation_speed)
+		velocity = transform.basis.z.normalized() * movement_speed
 	
 	move_and_slide()
 
