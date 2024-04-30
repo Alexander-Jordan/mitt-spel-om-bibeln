@@ -320,10 +320,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("9_p2ci6")
-expand_mode = 3
+expand_mode = 2
 stretch_mode = 5
 
 [node name="LevelDescription" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(470, 31)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "This is a description"

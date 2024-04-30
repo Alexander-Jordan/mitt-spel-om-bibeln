@@ -1,7 +1,7 @@
 extends RigidBody3D
 class_name FruitComponent
 
-func _on_interaction_responder_component_execute_objectives(objectives):
+func _on_interaction_responder_component_execute_objectives(_objectives):
 	# NOTE!
 	# normally, we would act upon the objectives.
 	# but since all fruits are ever only interacted with by eating them,
