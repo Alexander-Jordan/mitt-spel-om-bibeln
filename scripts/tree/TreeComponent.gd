@@ -25,8 +25,6 @@ func timeout():
 	try_to_add_drop_objective()
 
 func start_random_time():
-	var min_time: float = 1
-	var max_time: float = 60
 	timer.start(randf_range(min_time, max_time))
 
 func try_to_add_drop_objective():
@@ -53,5 +51,5 @@ func _on_interaction_responder_component_execute_objectives(execute_objectives):
 	objectives.next_in_queue()
 
 
-func _on_drop_component_drop_item(position:Vector3):
-	drop_item.emit(position)
+func _on_drop_component_drop_item(drop_position:Vector3):
+	drop_item.emit(drop_position)

@@ -16,7 +16,7 @@ func _ready():
 	
 	assert(raycast != null, "A RayCast3D is required as child node")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if target_position is Vector3:
 		transform = transform.interpolate_with(transform.looking_at(target_position, Vector3.UP, true), rotation_speed)
 		velocity = transform.basis.z.normalized() * movement_speed
