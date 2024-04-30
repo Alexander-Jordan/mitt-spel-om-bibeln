@@ -5,7 +5,7 @@ class_name LevelLoadComponent
 
 var level_being_loaded:Level = null
 
-func _process(delta):
+func _process(_delta):
 	if level_being_loaded != null:
 		var process:Array = []
 		var status:int = ResourceLoader.load_threaded_get_status(level_being_loaded.path, process)
