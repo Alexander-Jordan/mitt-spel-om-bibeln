@@ -2087,6 +2087,7 @@ name = "Klappa"
 input_action_name = "interact"
 responder_audio = ExtResource("11_1t3b8")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
+initiator_objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
 min_distance = 0.0
 max_distance = 3.0
 
@@ -2102,6 +2103,7 @@ name = "Kalla på"
 input_action_name = "interact"
 initiator_audio = SubResource("AudioStreamWAV_nm308")
 objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
+initiator_objectives = Array[Resource("res://scripts/objective/Objective.gd")]([])
 min_distance = 0.0
 max_distance = 20.0
 
