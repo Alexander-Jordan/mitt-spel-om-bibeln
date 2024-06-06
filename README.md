@@ -6,6 +6,8 @@ Transportera dig själv till händelserna i Bibeln!
 
 Ett spel grundat på boken "Min bok om Bibeln", skapat i Godot.
 
+[Spela här!](https://brallex.itch.io/mitt-spel-om-bibeln)
+
 ## Screenshots
 
 ![level_1](assets/images/level_1.png)
