@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/MiTica.otf-827d17192325b04c6de914e2ac08f26e.f
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

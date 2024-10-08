@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Quicksand_Bold.otf-6ba3fb88aa163e6c8925dfacce
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
