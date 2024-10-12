@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dewneko74wke7"
 path.s3tc="res://.godot/imported/gojira_0.jpg-21414ffde14d1d7e90d2cfadc05973e5.s3tc.ctex"
+path.etc2="res://.godot/imported/gojira_0.jpg-21414ffde14d1d7e90d2cfadc05973e5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/godzilla/gojira_0.jpg"
-dest_files=["res://.godot/imported/gojira_0.jpg-21414ffde14d1d7e90d2cfadc05973e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/gojira_0.jpg-21414ffde14d1d7e90d2cfadc05973e5.s3tc.ctex", "res://.godot/imported/gojira_0.jpg-21414ffde14d1d7e90d2cfadc05973e5.etc2.ctex"]
 
 [params]
 
