@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmmkvr8x3sebg"]
 
-[ext_resource type="Script" path="res://scripts/player/PlayerUIComponent.gd" id="1_nigkq"]
+[ext_resource type="Script" uid="uid://drmq2cqoajg4y" path="res://scripts/player/PlayerUIComponent.gd" id="1_nigkq"]
 [ext_resource type="Texture2D" uid="uid://dvji7kd15f8lb" path="res://assets/icons/cross-hair.png" id="1_v2epy"]
 
 [node name="PlayerUI" type="Control"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnlh0pshqvw0a" path="res://assets/textures/test_level/templategrid_albedo.png" id="1_33xv5"]
 [ext_resource type="PackedScene" uid="uid://d3ar8v4m2f6cd" path="res://scenes/player.tscn" id="2_tx0s1"]
-[ext_resource type="Script" path="res://addons/floatable_body/fluid_area_3d.gd" id="3_h0v03"]
+[ext_resource type="Script" uid="uid://beq71gbm3ihcv" path="res://addons/floatable_body/fluid_area_3d.gd" id="3_h0v03"]
 [ext_resource type="Shader" uid="uid://4bkrirefulsf" path="res://assets/shaders/water.tres" id="4_5w4io"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lnxq7"]

@@ -39,7 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://n3m2ov55a10j" path="res://scenes/animals/deer_female.tscn" id="30_cj6hb"]
 [ext_resource type="PackedScene" uid="uid://cs2npd8q8sl7d" path="res://scenes/animals/bear.tscn" id="31_q81ea"]
 [ext_resource type="PackedScene" uid="uid://tknbsr167tjd" path="res://scenes/animals/bison.tscn" id="32_rqlhw"]
-[ext_resource type="Script" path="res://addons/floatable_body/fluid_area_3d.gd" id="33_nem4l"]
+[ext_resource type="Script" uid="uid://beq71gbm3ihcv" path="res://addons/floatable_body/fluid_area_3d.gd" id="33_nem4l"]
 [ext_resource type="PackedScene" uid="uid://b2xqqsj7e26uh" path="res://scenes/animals/fox.tscn" id="34_cwcdq"]
 [ext_resource type="PackedScene" uid="uid://bojqrfkq2p2cm" path="res://scenes/animals/rabbit.tscn" id="35_0x1a6"]
 [ext_resource type="AudioStream" uid="uid://gws5lq0abo3x" path="res://assets/audio/night-ambience-17064.mp3" id="43_5ckl7"]
@@ -49,7 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://blqmdcv8l1wbw" path="res://assets/audio/waterfall-rumble.wav" id="47_8twwn"]
 [ext_resource type="PackedScene" uid="uid://b1br12ltm7msd" path="res://scenes/animals/elephant_2.tscn" id="47_nms6j"]
 [ext_resource type="AudioStream" uid="uid://dtavptj6oixrh" path="res://assets/audio/river.wav" id="48_5juxr"]
-[ext_resource type="Script" path="res://scripts/ItemPoolComponent.gd" id="50_yakdn"]
+[ext_resource type="Script" uid="uid://bkkt4tdqq1hp3" path="res://scripts/ItemPoolComponent.gd" id="50_yakdn"]
 [ext_resource type="PackedScene" uid="uid://bqjiwaislvnl6" path="res://scenes/fruit/apple.tscn" id="51_wvh05"]
 [ext_resource type="PackedScene" uid="uid://daf2ak3s5k5od" path="res://scenes/fruit/banana.tscn" id="52_inoe6"]
 [ext_resource type="PackedScene" uid="uid://ckny8u3ig221a" path="res://scenes/fruit/mango.tscn" id="53_kvlqk"]
@@ -1523,7 +1523,7 @@ tracks/197/keys = PackedFloat32Array(0, 1, 0.936144, 0.00870061, 0.0245233, 0.35
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_swte7"]
 _data = {
-"new_animation": SubResource("Animation_bl5wi")
+&"new_animation": SubResource("Animation_bl5wi")
 }
 
 [node name="level_1" type="Node3D"]
