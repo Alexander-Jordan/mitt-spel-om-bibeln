@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d2betxms5lxy8"]
+[gd_scene format=3 uid="uid://d2betxms5lxy8"]
 
 [ext_resource type="PackedScene" uid="uid://b5s2lwu36h1t8" path="res://assets/models/bedroom/sovrum.blend" id="1_h6pfy"]
 [ext_resource type="FontFile" uid="uid://d4ak8gpn72nj7" path="res://assets/fonts/comic/lt_crafted/LT Crafted.otf" id="1_hdq7i"]
@@ -63,21 +63,21 @@ description = "Det här är en simpel testbana som användes under tiden som spe
 image = ExtResource("10_7kie3")
 path = "res://scenes/levels/test_level.tscn"
 
-[node name="Menu" type="CanvasLayer"]
+[node name="Menu" type="CanvasLayer" unique_id=1400957978]
 
-[node name="Background" type="Node3D" parent="."]
+[node name="Background" type="Node3D" parent="." unique_id=1526665681]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Background"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background" unique_id=1539391222]
 environment = SubResource("Environment_2fe4c")
 
-[node name="sun" type="DirectionalLight3D" parent="Background"]
+[node name="sun" type="DirectionalLight3D" parent="Background" unique_id=739746300]
 transform = Transform3D(-0.083678, 0.519182, -0.850557, 0, 0.853551, 0.521009, 0.996493, 0.043597, -0.0714234, 0, 0, 0)
 light_color = Color(1, 0.705882, 0.521569, 1)
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
 
-[node name="light_desk_lamp" type="OmniLight3D" parent="Background"]
+[node name="light_desk_lamp" type="OmniLight3D" parent="Background" unique_id=2060247591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54114, 0.759424, 0.349259)
 light_color = Color(0.839216, 0.603922, 0, 1)
 light_energy = 0.5
@@ -87,7 +87,7 @@ shadow_enabled = true
 shadow_opacity = 0.5
 omni_range = 2.0
 
-[node name="light_cealing_lamp" type="OmniLight3D" parent="Background"]
+[node name="light_cealing_lamp" type="OmniLight3D" parent="Background" unique_id=116971690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93174, 2.07612, 2.46044)
 light_color = Color(0.827451, 0.756863, 0.521569, 1)
 light_energy = 2.067
@@ -97,13 +97,13 @@ shadow_enabled = true
 shadow_opacity = 0.5
 omni_attenuation = 0.225313
 
-[node name="milo_avatar" parent="Background" instance=ExtResource("1_lykv6")]
+[node name="milo_avatar" parent="Background" unique_id=1086865919 instance=ExtResource("1_lykv6")]
 transform = Transform3D(0.00575391, 0, 0.00817879, 0, 0.01, 0, -0.00817879, 0, 0.00575391, 0.283626, 0, 1.92714)
 
-[node name="alex_avatar" parent="Background" instance=ExtResource("1_s3sf0")]
+[node name="alex_avatar" parent="Background" unique_id=954107079 instance=ExtResource("1_s3sf0")]
 transform = Transform3D(0.00579053, 0, -0.00815289, 0, 0.01, 0, 0.00815289, 0, 0.00579053, 0.748528, 0, 1.9178)
 
-[node name="sovrum" parent="Background" instance=ExtResource("1_h6pfy")]
+[node name="sovrum" parent="Background" unique_id=354010469 instance=ExtResource("1_h6pfy")]
 
 [node name="matta" parent="Background/sovrum" index="0"]
 surface_material_override/0 = ExtResource("2_4cpw2")
@@ -171,34 +171,34 @@ surface_material_override/0 = ExtResource("2_4cpw2")
 [node name="golv" parent="Background/sovrum" index="10"]
 surface_material_override/0 = ExtResource("2_4cpw2")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Background"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background" unique_id=1939927594]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Background/SubViewportContainer" unique_id=423282480]
 handle_input_locally = false
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="CameraManager" type="Node3D" parent="Background/SubViewportContainer/SubViewport"]
+[node name="CameraManager" type="Node3D" parent="Background/SubViewportContainer/SubViewport" unique_id=1898007865]
 script = ExtResource("2_5fxog")
 
-[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+[node name="Camera3D" type="Camera3D" parent="Background/SubViewportContainer/SubViewport/CameraManager" unique_id=1149647487]
 transform = Transform3D(0.838965, 0.190542, -0.509736, 1.36786e-08, 0.936697, 0.350142, 0.544185, -0.293757, 0.785856, 0.456742, 1.28222, 3.1742)
 
-[node name="MainCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+[node name="MainCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager" unique_id=604926546]
 transform = Transform3D(0.838965, 0.190542, -0.509736, 1.36786e-08, 0.936697, 0.350142, 0.544185, -0.293757, 0.785856, 0.456742, 1.28222, 3.1742)
 
-[node name="LevelsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+[node name="LevelsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager" unique_id=655893501]
 transform = Transform3D(0.933916, 0.34795, -0.0820478, 0.00214303, 0.224056, 0.974574, 0.357486, -0.910346, 0.208504, 0.653782, 0.694648, 0.909354)
 
-[node name="CreditsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager"]
+[node name="CreditsCameraPosition" type="Node3D" parent="Background/SubViewportContainer/SubViewport/CameraManager" unique_id=98728970]
 transform = Transform3D(0.999997, 0.000194456, 0.00260475, -1.45519e-11, 0.997225, -0.074447, -0.002612, 0.0744467, 0.997222, 0.515197, 0.104262, 2.44695)
 
-[node name="MenuUI" type="Control" parent="." node_paths=PackedStringArray("button_pressed_audio_stream_player")]
+[node name="MenuUI" type="Control" parent="." unique_id=1301824495 node_paths=PackedStringArray("button_pressed_audio_stream_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -209,7 +209,7 @@ theme = SubResource("Theme_cw3cf")
 script = ExtResource("3_8qya4")
 button_pressed_audio_stream_player = NodePath("../ButtonClickAudioStreamPlayer")
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuUI"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuUI" unique_id=170310202]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,40 +221,40 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer" unique_id=457011119]
 layout_mode = 2
 
-[node name="GameTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="GameTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer" unique_id=1932045483]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 62
 text = "Mitt spel om Bibeln"
 
-[node name="Main" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="Main" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer" unique_id=1124486871]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Main"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Main" unique_id=133831547]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="StartButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer" unique_id=1765244627]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Starta spel"
 
-[node name="CreditsButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer" unique_id=745633951]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Skapare"
 
-[node name="QuitButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Main/VBoxContainer" unique_id=553210070]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Avsluta"
 
-[node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer" node_paths=PackedStringArray("button_pressed_audio_stream_player")]
+[node name="LevelSelect" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer" unique_id=615615357 node_paths=PackedStringArray("button_pressed_audio_stream_player")]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -263,21 +263,21 @@ script = ExtResource("6_2okh0")
 button_pressed_audio_stream_player = NodePath("../../../../ButtonClickAudioStreamPlayer")
 levels = Array[ExtResource("8_wfrql")]([SubResource("Resource_aux6x"), SubResource("Resource_san63")])
 
-[node name="LevelSelector" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+[node name="LevelSelector" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect" unique_id=1337404942]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector" unique_id=1881165445]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="MenuTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer"]
+[node name="MenuTitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer" unique_id=1953438679]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Välj bana"
 
-[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer"]
+[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer" unique_id=2089869741]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -286,11 +286,11 @@ icon = ExtResource("4_11fsp")
 icon_alignment = 1
 expand_icon = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector" unique_id=1095113485]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PreviousButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2"]
+[node name="PreviousButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2" unique_id=1123271582]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -300,22 +300,22 @@ ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2" unique_id=1463305702]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LevelName" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer"]
+[node name="LevelName" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer" unique_id=1492829330]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Level Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer" unique_id=1103429608]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LevelImage" type="TextureRect" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="LevelImage" type="TextureRect" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1097412499]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -323,7 +323,7 @@ texture = ExtResource("9_p2ci6")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="LevelDescription" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="LevelDescription" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1127400336]
 custom_minimum_size = Vector2(470, 31)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -331,7 +331,7 @@ text = "This is a description"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2"]
+[node name="NextButton" type="TextureButton" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector/HBoxContainer2" unique_id=859531203]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -340,51 +340,51 @@ texture_normal = ExtResource("5_eifie")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LoadLevelButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector"]
+[node name="LoadLevelButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelSelector" unique_id=1823430904]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 text = "Ladda bana"
 
-[node name="LevelLoad" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect"]
+[node name="LevelLoad" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect" unique_id=427401117]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad" unique_id=1305854976]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer"]
+[node name="Label" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer" unique_id=809581174]
 layout_mode = 2
 text = "Laddar bana..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer" unique_id=85407520]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 
-[node name="Credits" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer"]
+[node name="Credits" type="MarginContainer" parent="MenuUI/MarginContainer/VBoxContainer" unique_id=1054488067]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits" unique_id=1285184366]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer" unique_id=1079271285]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Subtitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer"]
+[node name="Subtitle" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer" unique_id=1927926862]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Spelets skapare"
 
-[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/HBoxContainer" unique_id=234996429]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -393,30 +393,30 @@ icon = ExtResource("4_11fsp")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer" unique_id=270694030]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Milo" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/VBoxContainer2"]
+[node name="Milo" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/VBoxContainer2" unique_id=160026133]
 layout_mode = 2
 text = "Milo Laakso"
 horizontal_alignment = 1
 
-[node name="Alex" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/VBoxContainer2"]
+[node name="Alex" type="Label" parent="MenuUI/MarginContainer/VBoxContainer/Credits/VBoxContainer/VBoxContainer2" unique_id=1104174662]
 layout_mode = 2
 text = "Alexander Jordan"
 horizontal_alignment = 1
 
-[node name="LevelLoadComponent" type="Node" parent="." node_paths=PackedStringArray("progress_bar")]
+[node name="LevelLoadComponent" type="Node" parent="." unique_id=878601613 node_paths=PackedStringArray("progress_bar")]
 script = ExtResource("15_42nej")
 progress_bar = NodePath("../MenuUI/MarginContainer/VBoxContainer/LevelSelect/LevelLoad/VBoxContainer/ProgressBar")
 
-[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1263000725]
 stream = ExtResource("16_f52c8")
 volume_db = -10.0
 autoplay = true
 
-[node name="ButtonClickAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ButtonClickAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1447038400]
 stream = ExtResource("17_bdmej")
 
 [connection signal="menu_changed" from="MenuUI" to="Background/SubViewportContainer/SubViewport/CameraManager" method="_on_menu_ui_menu_changed"]
