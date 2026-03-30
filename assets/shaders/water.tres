@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=29 format=3 uid="uid://4bkrirefulsf"]
+[gd_resource type="VisualShader" format=3 uid="uid://4bkrirefulsf"]
 
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_q20er"]
 default_input_values = [1, Vector2(-0.1, -0.1), 2, Vector2(0, 0)]
@@ -25,12 +25,11 @@ constant = 0.9
 noise_type = 2
 fractal_type = 0
 cellular_distance_function = 1
-cellular_jitter = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xyi8l"]
+noise = SubResource("FastNoiseLite_4f4jf")
 seamless = true
 bump_strength = 1.5
-noise = SubResource("FastNoiseLite_4f4jf")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_71k45"]
 texture = SubResource("NoiseTexture2D_xyi8l")
@@ -53,12 +52,11 @@ noise_type = 2
 seed = 10
 fractal_type = 0
 cellular_distance_function = 1
-cellular_jitter = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g1evf"]
+noise = SubResource("FastNoiseLite_drfi3")
 seamless = true
 bump_strength = 1.5
-noise = SubResource("FastNoiseLite_drfi3")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_1l3qu"]
 texture = SubResource("NoiseTexture2D_g1evf")
@@ -80,9 +78,9 @@ input_name = "time"
 default_input_values = [1, Vector2(0.1, 0.1), 2, Vector2(0, 0)]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dlokl"]
+noise = SubResource("FastNoiseLite_4f4jf")
 seamless = true
 bump_strength = 1.5
-noise = SubResource("FastNoiseLite_4f4jf")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_22c5b"]
 texture = SubResource("NoiseTexture2D_dlokl")
@@ -105,113 +103,6 @@ operator = 2
 input_name = "model_matrix"
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-uniform sampler2D tex_vtx_4;
-uniform sampler2D tex_frg_2;
-uniform sampler2D tex_frg_9;
-
-
-
-void vertex() {
-// Input:2
-	float n_out2p0 = TIME;
-
-
-// UVFunc:3
-	vec2 n_in3p1 = vec2(0.10000, 0.10000);
-	vec2 n_out3p0 = vec2(n_out2p0) * n_in3p1 + UV;
-
-
-// Texture2D:4
-	vec4 n_out4p0 = texture(tex_vtx_4, n_out3p0);
-
-
-// Input:6
-	vec3 n_out6p0 = NORMAL;
-
-
-// VectorOp:8
-	vec3 n_in8p1 = vec3(0.20000, 0.20000, 0.20000);
-	vec3 n_out8p0 = n_out6p0 * n_in8p1;
-
-
-// Input:5
-	vec3 n_out5p0 = VERTEX;
-
-
-// MultiplyAdd:7
-	vec4 n_out7p0 = fma(n_out4p0, vec4(n_out8p0, 0.0), vec4(n_out5p0, 0.0));
-
-
-// Output:0
-	VERTEX = vec3(n_out7p0.xyz);
-
-
-}
-
-void fragment() {
-// ColorConstant:3
-	vec4 n_out3p0 = vec4(0.154630, 0.286709, 0.999999, 1.000000);
-
-
-// Input:8
-	float n_out8p0 = TIME;
-
-
-// UVFunc:7
-	vec2 n_in7p1 = vec2(0.10000, 0.10000);
-	vec2 n_out7p0 = vec2(n_out8p0) * n_in7p1 + UV;
-
-
-// Texture2D:2
-	vec4 n_out2p0 = texture(tex_frg_2, n_out7p0);
-
-
-// Input:11
-	float n_out11p0 = TIME;
-
-
-// UVFunc:10
-	vec2 n_in10p1 = vec2(-0.10000, -0.10000);
-	vec2 n_out10p0 = vec2(n_out11p0) * n_in10p1 + UV;
-
-
-// Texture2D:9
-	vec4 n_out9p0 = texture(tex_frg_9, n_out10p0);
-
-
-// VectorOp:12
-	vec4 n_out12p0 = n_out2p0 * n_out9p0;
-
-
-// VectorOp:13
-	vec4 n_in13p1 = vec4(1.25000, 1.25000, 1.25000, 1.25000);
-	vec4 n_out13p0 = pow(n_out12p0, n_in13p1);
-
-
-// VectorOp:6
-	vec4 n_out6p0 = n_out3p0 + n_out13p0;
-
-
-// FloatConstant:15
-	float n_out15p0 = 0.900000;
-
-
-// FloatConstant:14
-	float n_out14p0 = 0.000000;
-
-
-// Output:0
-	ALBEDO = vec3(n_out6p0.xyz);
-	ALPHA = n_out15p0;
-	ROUGHNESS = n_out14p0;
-	EMISSION = vec3(n_out13p0.xyz);
-
-
-}
-"
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_re634")
 nodes/vertex/2/position = Vector2(-840, -20)
 nodes/vertex/3/node = SubResource("VisualShaderNodeUVFunc_hfu1p")
